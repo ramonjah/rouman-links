@@ -19,6 +19,12 @@
     .platform-icon{width:25px;height:25px;flex-shrink:0;color:var(--muted);transition:transform .25s,color .25s}.link{position:relative;overflow:hidden;transition:transform .2s,background .2s,border-color .2s,box-shadow .2s}.link::before{content:"";position:absolute;inset:0;background:radial-gradient(180px circle at var(--x,50%) var(--y,50%),rgba(210,252,99,.13),transparent);opacity:0;transition:opacity .2s;pointer-events:none}.link:hover,.link:focus-visible{transform:translateY(-3px);border-color:#a2b27d;box-shadow:0 8px 24px #0005}.link:hover::before,.link:focus-visible::before{opacity:1}.link:hover .platform-icon,.link:focus-visible .platform-icon{color:#d2fc63;transform:rotate(-7deg) scale(1.13)}.link:active{transform:translateY(0) scale(.98)}.portrait{transition:transform .35s,box-shadow .35s}.portrait:hover{transform:scale(1.04);box-shadow:0 0 0 4px #d2fc6325}.cover-wall{transition:transform .6s ease-out;transform:translate(var(--px,0px),var(--py,0px)) rotate(-12deg) scale(1.1)}
     @media(hover:none){.link:hover{transform:none}.link:active{transform:scale(.98)}}
     @media(prefers-reduced-motion:reduce){.link:hover,.link:active,.link:focus-visible,.portrait:hover,.link:hover .platform-icon,.link:focus-visible .platform-icon{transform:none}.cover-wall{transform:rotate(-12deg) scale(1.1)}}
+    .cover-wall{animation:cover-drift 24s ease-in-out infinite;will-change:transform}
+    @keyframes cover-drift{
+      0%,100%{transform:translate(calc(var(--px,0px) - 1.5%),calc(var(--py,0px) - 1%)) rotate(-14deg) scale(1.16)}
+      50%{transform:translate(calc(var(--px,0px) + 1.5%),calc(var(--py,0px) + 1%)) rotate(-10deg) scale(1.23)}
+    }
+    @media(prefers-reduced-motion:reduce){.cover-wall{animation:none;will-change:auto}}
   </style>
 </head>
 <body>
