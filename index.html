@@ -41,6 +41,10 @@
     h1.artist-name{width:340px;margin:0 auto;max-width:100%}
     .profile{margin-bottom:32px}
     @media(max-width:500px){h1.artist-name{width:300px;margin:0 auto}}
+    h1.artist-name{position:relative}
+    h1.artist-name::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,#fff0a0 0%,#ffbf44 18%,#ff582e 37%,#e33348 53%,#b59ae5 72%,#ffe86c 87%,#fff0a0 100%);background-size:300% 300%;-webkit-mask:url('rouman-logo.png') center/100% 100% no-repeat;mask:url('rouman-logo.png') center/100% 100% no-repeat;animation:logo-shimmer 9s ease-in-out infinite}
+    @keyframes logo-shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+    @media(prefers-reduced-motion:reduce){h1.artist-name::after{animation:none;background-position:50% 50%}}
   </style>
 </head>
 <body>
