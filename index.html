@@ -36,6 +36,8 @@
     .portrait-frame h1.artist-name{position:absolute;z-index:1;left:50%;bottom:4%;transform:translateX(-50%);width:46%;max-width:none;margin:0;pointer-events:none}
     .portrait-frame .artist-logo{filter:drop-shadow(0 2px 5px #0009)}
     @media(max-width:500px){.portrait-frame{max-width:340px;border-radius:16px}.portrait-frame .portrait{width:100%;height:100%;margin:0;border-radius:0}.portrait-frame h1.artist-name{max-width:none;margin:0}}
+    h1.artist-name{position:static;transform:none;width:220px;max-width:100%;margin:0 auto 20px;line-height:0}
+    @media(max-width:500px){h1.artist-name{width:190px;margin-bottom:18px}}
   </style>
 </head>
 <body>
@@ -49,10 +51,7 @@
   </div>
   <main>
     <header class="profile">
-      <div class="portrait-frame">
-        <img class="portrait" src="rouman.jpg" alt="Rouman" width="500" height="500">
-        <h1 class="artist-name"><img class="artist-logo" src="rouman-logo.png" alt="ROUMAN" width="1210" height="751"></h1>
-      </div>
+      <h1 class="artist-name"><img class="artist-logo" src="rouman-logo.png" alt="ROUMAN" width="1210" height="751"></h1>
       <p class="subtitle">DnB Producer</p>
     </header>
     <nav class="links" aria-label="Music and social links">
