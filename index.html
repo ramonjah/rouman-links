@@ -45,17 +45,33 @@
     h1.artist-name::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,#fff0a0 0%,#ffbf44 18%,#ff582e 37%,#e33348 53%,#b59ae5 72%,#ffe86c 87%,#fff0a0 100%);background-size:300% 300%;-webkit-mask:url('rouman-logo.png') center/100% 100% no-repeat;mask:url('rouman-logo.png') center/100% 100% no-repeat;animation:logo-shimmer 9s ease-in-out infinite}
     @keyframes logo-shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
     @media(prefers-reduced-motion:reduce){h1.artist-name::after{animation:none;background-position:50% 50%}}
+    /* Keep the fixed clipping layer separate from the animated artwork. */
+    html{background:var(--bg);overflow-x:clip}
+    body{isolation:auto;overflow-x:clip}
+    body::before{content:none}
+    .background{position:fixed;inset:0 0 auto;height:100vh;height:100lvh;overflow:hidden;pointer-events:none;z-index:0;contain:paint}
+    .background::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0a0b0a73,#0a0b0ae3 32%,#0a0b0ae3 68%,#0a0b0a73)}
+    .cover-wall{position:absolute;inset:-20%;z-index:auto;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));transition:none}
+    .cover-wall img{display:block;min-width:0;filter:none}
+    main{position:relative;z-index:1;padding-bottom:max(40px,env(safe-area-inset-bottom))}
+    @media(max-width:700px),(hover:none){
+      .cover-wall{inset:-40px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));animation:mobile-drift 28s ease-in-out infinite;transform:translate3d(0,0,0)}
+      .background::after{background:#0a0b0ac7}
+      .link{backdrop-filter:none;-webkit-backdrop-filter:none;background:#10110ff0}
+    }
+    @keyframes mobile-drift{0%,100%{transform:translate3d(-10px,-14px,0)}50%{transform:translate3d(10px,14px,0)}}
+    @media(prefers-reduced-motion:reduce){.cover-wall{animation:none;transform:none;will-change:auto}}
   </style>
 </head>
 <body>
-  <div class="cover-wall" aria-hidden="true">
+  <div class="background" aria-hidden="true"><div class="cover-wall">
     <img src="covers/cinderblock.jpg" alt="">
     <img src="covers/van-damme.jpg" alt="">
     <img src="covers/monkey-head.jpg" alt="">
     <img src="covers/smoke.jpg" alt="">
     <img src="covers/filthy-dog.jpg" alt="">
     <img src="covers/tonight.jpg" alt="">
-  </div>
+  </div></div>
   <main>
     <header class="profile">
       <h1 class="artist-name"><img class="artist-logo" src="rouman-logo.png" alt="ROUMAN" width="1210" height="751"></h1>
