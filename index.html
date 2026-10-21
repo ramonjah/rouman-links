@@ -152,6 +152,8 @@
     h1.artist-name::after,h1.artist-name.is-playing::after{content:"";position:absolute;inset:0;pointer-events:none;-webkit-mask:url('rouman-logo-sculpted.png') center/100% 100% no-repeat;mask:url('rouman-logo-sculpted.png') center/100% 100% no-repeat;background-image:linear-gradient(115deg,transparent 42%,#fff5 49%,#ffdc9b38 51%,transparent 58%),linear-gradient(75deg,transparent 38%,#b59ae52b 48%,#ffbf7226 53%,transparent 63%);background-size:320% 100%,280% 100%;background-position:120% 0,-20% 0;mix-blend-mode:screen;opacity:.7;filter:none;animation:sculpted-reflections 11s linear infinite}
     @keyframes sculpted-reflections{0%{background-position:120% 0,-20% 0}100%{background-position:-20% 0,120% 0}}
     @media(prefers-reduced-motion:reduce){h1.artist-name::after,h1.artist-name.is-playing::after{content:none;animation:none}}
+    h1.artist-name.is-playing{transform:translateY(var(--audio-y,0px)) rotate(var(--audio-tilt,0deg)) scale(var(--audio-scale,1));will-change:transform}
+    @media(prefers-reduced-motion:reduce){h1.artist-name.is-playing{transform:none;will-change:auto}}
   </style>
 </head>
 <body>
@@ -252,6 +254,7 @@
 
   const reactiveLogo = document.querySelector('.artist-name');
   let audioContext, analyser, frequencyData, reactionFrame = 0, bassLevel = 0;
+  let previousSpectrum, lastFrameTime = 0, lastHit = 0, hitPulse = 0, hitDirection = 1;
   function prepareAudioReaction() {
     const Context = window.AudioContext || window.webkitAudioContext;
     if (!Context) return;
@@ -259,11 +262,14 @@
       audioContext = new Context();
       analyser = audioContext.createAnalyser();
       analyser.fftSize = 1024;
-      analyser.smoothingTimeConstant = .65;
+      analyser.smoothingTimeConstant = .15;
+      analyser.minDecibels = -80;
+      analyser.maxDecibels = -8;
       const mediaSource = audioContext.createMediaElementSource(audio);
       mediaSource.connect(analyser);
       analyser.connect(audioContext.destination);
       frequencyData = new Uint8Array(analyser.frequencyBinCount);
+      previousSpectrum = new Float32Array(analyser.frequencyBinCount);
     }
     if (audioContext.state === 'suspended') audioContext.resume().catch(()=>{});
   }
@@ -271,6 +277,10 @@
     cancelAnimationFrame(reactionFrame);
     reactionFrame = 0;
     bassLevel = 0;
+    hitPulse = 0; lastFrameTime = 0; lastHit = 0;
+    if (previousSpectrum) previousSpectrum.fill(0);
+    reactiveLogo.style.removeProperty('--audio-y');
+    reactiveLogo.style.removeProperty('--audio-tilt');
     reactiveLogo.style.removeProperty('--audio-scale');
     reactiveLogo.style.removeProperty('--audio-glow');
   }
@@ -283,10 +293,32 @@
       const high = Math.min(frequencyData.length-1, Math.ceil(180 / binHz));
       let energy = 0;
       for (let i=low;i<=high;i++) energy += frequencyData[i];
-      const target = Math.pow(energy / ((high-low+1)*255), 2);
-      bassLevel += (target-bassLevel) * (target > bassLevel ? .75 : .23);
-      reactiveLogo.style.setProperty('--audio-scale', String(1 + bassLevel * .0175));
-      reactiveLogo.style.setProperty('--audio-glow', `${4 + bassLevel * 18}px`);
+      const now = performance.now();
+      const dt = Math.min(.05, lastFrameTime ? (now-lastFrameTime)/1000 : 1/60);
+      lastFrameTime = now;
+      const target = energy / ((high-low+1)*255);
+      let flux = 0, count = 0;
+      // Positive spectral change catches kick/snare attacks rather than sustained bass.
+      for(let i=low;i<Math.min(frequencyData.length,Math.ceil(3500/binHz));i++) {
+        const value = frequencyData[i]/255;
+        flux += Math.max(0,value-previousSpectrum[i]) * (i<=high ? 2.5 : 1);
+        previousSpectrum[i] = value;
+        count++;
+      }
+      flux /= Math.max(1,count);
+      const attack = Math.max(0,target-bassLevel);
+      const impact = Math.min(1,attack*5 + flux*12);
+      if (impact>.12 && now-lastHit>115) {
+        hitPulse = Math.max(hitPulse,Math.min(1,impact*1.8));
+        hitDirection *= -1;
+        lastHit = now;
+      }
+      bassLevel += (target-bassLevel)*(1-Math.exp(-dt*7));
+      hitPulse *= Math.exp(-dt*11);
+      reactiveLogo.style.setProperty('--audio-scale', String(1 + hitPulse*.035));
+      reactiveLogo.style.setProperty('--audio-y', `${-hitPulse*4}px`);
+      reactiveLogo.style.setProperty('--audio-tilt', `${hitPulse*hitDirection*.7}deg`);
+      reactiveLogo.style.setProperty('--audio-glow', `${4 + hitPulse*14}px`);
     }
     reactionFrame = requestAnimationFrame(reactToAudio);
   }
