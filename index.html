@@ -61,6 +61,14 @@
     }
     @keyframes mobile-drift{0%,100%{transform:translate3d(-10px,-14px,0)}50%{transform:translate3d(10px,14px,0)}}
     @media(prefers-reduced-motion:reduce){.cover-wall{animation:none;transform:none;will-change:auto}}
+    /* Extruded silhouette follows the original transparent logo exactly. */
+    h1.artist-name{isolation:isolate;transform:perspective(900px) rotateX(8deg) rotateY(-8deg);transform-origin:center;filter:drop-shadow(10px 18px 14px #0009)}
+    h1.artist-name::before{content:"";position:absolute;inset:0;z-index:-1;background:#472325;-webkit-mask:url('rouman-logo.png') center/100% 100% no-repeat;mask:url('rouman-logo.png') center/100% 100% no-repeat;transform:translate(1px,1px);filter:drop-shadow(1px 1px 0 #713b30) drop-shadow(1px 1px 0 #66332d) drop-shadow(2px 2px 0 #50282a) drop-shadow(3px 3px 0 #351d26)}
+    .artist-logo{filter:drop-shadow(-1px -1px 0 #fff7) drop-shadow(1px 1px 0 #140e18)}
+    h1.artist-name::after{background-image:linear-gradient(155deg,#ffffffa6 0%,#ffffff00 22%,#00000000 48%,#150a274d 74%,#fff7 100%),linear-gradient(115deg,#fff0a0 0%,#ffbf44 18%,#ff582e 37%,#e33348 53%,#b59ae5 72%,#ffe86c 87%,#fff0a0 100%);background-size:100% 100%,300% 300%;animation:logo-metal 9s ease-in-out infinite}
+    @keyframes logo-metal{0%,100%{background-position:0 0,0% 50%}50%{background-position:0 0,100% 50%}}
+    @media(max-width:500px){h1.artist-name{transform:perspective(900px) rotateX(6deg) rotateY(-6deg)}}
+    @media(prefers-reduced-motion:reduce){h1.artist-name::after{animation:none}}
   </style>
 </head>
 <body>
