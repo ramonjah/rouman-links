@@ -134,6 +134,15 @@
     h1.artist-name.is-playing{filter:drop-shadow(0 5px 0 #24191e) drop-shadow(-8px 14px var(--audio-glow,8px) #ff98353d) drop-shadow(8px 18px 12px #b59ae53d)}
     h1.artist-name.is-playing::after{animation:logo-color-flow 20s linear infinite}
     @media(prefers-reduced-motion:reduce){h1.artist-name::after,h1.artist-name.is-playing::after{animation:none;background-position:50% 50%}}
+    /* Transparent glass face with a reflective rim, preserving the original mark. */
+    h1.artist-name{transform:none;filter:drop-shadow(0 7px 9px #0007);isolation:isolate}
+    h1.artist-name::before{content:"";position:absolute;inset:0;z-index:-1;transform:none;background:linear-gradient(135deg,#ffffff30,#cce9ff12 40%,#ffffff30 65%,#b5caff10);-webkit-mask:url('rouman-logo.png') center/100% 100% no-repeat;mask:url('rouman-logo.png') center/100% 100% no-repeat;filter:none;backdrop-filter:blur(10px) saturate(1.3);-webkit-backdrop-filter:blur(10px) saturate(1.3)}
+    .artist-logo{opacity:.3;filter:drop-shadow(-1px -1px 0 #fff) drop-shadow(1px 2px 0 #b5dcffbb)}
+    h1.artist-name::after{background-image:linear-gradient(115deg,transparent 30%,#ffffff05 41%,#ffffffbb 49%,#ffffff15 54%,transparent 65%),linear-gradient(155deg,#ffffffb3 0%,#d5edff26 14%,#ffffff0d 32%,#ffffff66 46%,#c2dbff14 52%,#ffffff05 72%,#ffffff80 100%);background-size:350% 100%,100% 100%;animation:glass-reflection 12s linear infinite;opacity:1;filter:none}
+    @keyframes glass-reflection{0%{background-position:120% 0,0 0}100%{background-position:-30% 0,0 0}}
+    h1.artist-name.is-playing{transform:scale(var(--audio-scale,1));filter:drop-shadow(0 7px 9px #0007)}
+    h1.artist-name.is-playing::after{animation:glass-reflection 12s linear infinite}
+    @media(prefers-reduced-motion:reduce){h1.artist-name::after,h1.artist-name.is-playing::after{animation:none;background-position:70% 0,0 0}h1.artist-name.is-playing{transform:none}}
   </style>
 </head>
 <body>
