@@ -119,6 +119,15 @@
     .preview-play[aria-pressed="true"]::after{animation-duration:1.8s}
     .link:active,.preview-play:active,.preview-next:active{box-shadow:inset 0 2px 5px #0008,inset 0 -1px 0 #ffc78188,0 1px 0 #09090c,0 6px 14px -7px #ff983580}
     @media(prefers-reduced-motion:reduce){.link::after,.preview-play::after,.preview-next::after{animation:none}.link::before{transition:none}}
+    /* Crisp face: no perspective resampling or stacked blurred edges. */
+    h1.artist-name{transform:none;filter:drop-shadow(0 5px 0 #24191e);will-change:auto}
+    .artist-logo{filter:none}
+    h1.artist-name::before{transform:translate(0,2px);background:#a06345;filter:drop-shadow(0 1px 0 #291b22)}
+    h1.artist-name::after{background-image:linear-gradient(110deg,transparent 35%,#fff8 49%,#fff2 52%,transparent 65%),linear-gradient(115deg,#ffe9b2,#ffb653 25%,#ff6742 52%,#d884ab 78%,#c3b4ec);background-size:350% 100%,100% 100%;background-position:120% 0,0 0;animation:logo-clean-sheen 7s ease-in-out infinite;opacity:1}
+    @keyframes logo-clean-sheen{0%,25%{background-position:120% 0,0 0}70%,100%{background-position:-30% 0,0 0}}
+    h1.artist-name.is-playing{transform:scale(var(--audio-scale,1));filter:drop-shadow(0 5px 0 #24191e);animation:none;will-change:transform}
+    h1.artist-name.is-playing::after{animation:logo-clean-sheen 3s ease-in-out infinite;opacity:1}
+    @media(prefers-reduced-motion:reduce){h1.artist-name.is-playing{transform:none;will-change:auto}h1.artist-name::after,h1.artist-name.is-playing::after{animation:none;background-position:120% 0,0 0}}
   </style>
 </head>
 <body>
