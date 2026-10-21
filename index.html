@@ -159,6 +159,16 @@
     .artist-logo{opacity:1;filter:none;image-rendering:auto}
     h1.artist-name::after,h1.artist-name.is-playing::after{mix-blend-mode:normal;opacity:.25}
     @media(prefers-reduced-motion:reduce){h1.artist-name,h1.artist-name.is-playing{transform:none;will-change:auto}}
+    .stage-lasers{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,#000, #0008 22%,#0002 40%,#0002 60%,#0008 78%,#000);mask-image:linear-gradient(90deg,#000,#0008 22%,#0002 40%,#0002 60%,#0008 78%,#000)}
+    .laser-rig{position:absolute;bottom:-5vh;width:1px;height:1px}
+    .left-rig{left:10%}.right-rig{right:10%}
+    .laser-rig i{--beam:181,154,229;display:block;position:absolute;bottom:0;left:-6px;width:12px;height:140vmax;transform-origin:50% 100%;background:linear-gradient(to top,rgba(var(--beam),.02),rgba(var(--beam),.17) 28%,rgba(var(--beam),.03) 90%,transparent);clip-path:polygon(48% 100%,0 0,100% 0,52% 100%);transform:rotate(var(--angle));animation:laser-scan 16s ease-in-out infinite alternate;animation-delay:var(--delay)}
+    .laser-rig i::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 35%,rgba(var(--beam),.32) 50%,transparent 65%)}
+    .laser-rig i:nth-child(even){--beam:255,183,112}
+    .right-rig i:nth-child(odd){--beam:126,203,205}
+    @keyframes laser-scan{from{transform:rotate(calc(var(--angle) - 17deg));opacity:.45}to{transform:rotate(calc(var(--angle) + 17deg));opacity:.85}}
+    @media(max-width:700px){.laser-rig i{width:8px;left:-4px;opacity:.6;animation-duration:20s}.left-rig{left:0}.right-rig{right:0}}
+    @media(prefers-reduced-motion:reduce){.stage-lasers{display:none}}
   </style>
 </head>
 <body>
@@ -170,6 +180,10 @@
     <img src="covers/filthy-dog.jpg" alt="">
     <img src="covers/tonight.jpg" alt="">
   </div></div>
+  <div class="stage-lasers" aria-hidden="true">
+    <div class="laser-rig left-rig"><i style="--angle:-35deg;--delay:0s"></i><i style="--angle:-15deg;--delay:-2s"></i><i style="--angle:5deg;--delay:-4s"></i><i style="--angle:25deg;--delay:-6s"></i></div>
+    <div class="laser-rig right-rig"><i style="--angle:-25deg;--delay:-3s"></i><i style="--angle:-5deg;--delay:-5s"></i><i style="--angle:15deg;--delay:-7s"></i><i style="--angle:35deg;--delay:-1s"></i></div>
+  </div>
   <main>
     <header class="profile">
       <h1 class="artist-name"><img class="artist-logo" src="rouman-logo-sculpted.png" alt="ROUMAN" width="1592" height="988"></h1>
