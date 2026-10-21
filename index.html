@@ -78,6 +78,9 @@
       65%{transform:perspective(900px) rotateX(7deg) rotateY(-7deg) scale(1.006);filter:drop-shadow(8px 14px 12px #0009) drop-shadow(0 0 9px #b59ae580)}
     }
     @media(prefers-reduced-motion:reduce){h1.artist-name.is-playing{animation:none;will-change:auto;filter:drop-shadow(0 0 10px #ff983560)}h1.artist-name.is-playing::after{animation:none}}
+    h1.artist-name.is-playing::after{animation:logo-metal 3s ease-in-out infinite,logo-flicker .5s linear infinite}
+    @keyframes logo-flicker{0%,16%,100%{opacity:1}20%,34%{opacity:.68}40%,96%{opacity:1}}
+    @media(prefers-reduced-motion:reduce){h1.artist-name.is-playing::after{animation:none}}
   </style>
 </head>
 <body>
