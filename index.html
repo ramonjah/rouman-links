@@ -81,6 +81,8 @@
     h1.artist-name.is-playing::after{animation:logo-metal 3s ease-in-out infinite,logo-flicker .5s linear infinite}
     @keyframes logo-flicker{0%,16%,100%{opacity:1}20%,34%{opacity:.68}40%,96%{opacity:1}}
     @media(prefers-reduced-motion:reduce){h1.artist-name.is-playing::after{animation:none}}
+    h1.artist-name.is-playing{animation:none;transform:perspective(900px) rotateX(7deg) rotateY(-7deg) scale(var(--audio-scale,1));filter:drop-shadow(8px 14px 12px #0009) drop-shadow(0 0 var(--audio-glow,4px) #ff983580)}
+    @media(prefers-reduced-motion:reduce){h1.artist-name.is-playing{transform:perspective(900px) rotateX(7deg) rotateY(-7deg);filter:drop-shadow(0 0 8px #ff983550)}}
   </style>
 </head>
 <body>
@@ -106,7 +108,7 @@
     </nav>
     <div class="preview-player" hidden>
       <p class="preview-status" role="status" aria-live="polite"></p>
-      <audio id="preview-audio" controls preload="none"></audio>
+      <audio id="preview-audio" crossorigin="anonymous" controls preload="none"></audio>
       <div class="preview-meta"><a class="preview-source" target="_blank" rel="noopener noreferrer">Preview · Apple Music</a><button class="preview-next" type="button">Next track ↻</button></div>
     </div>
     <a class="contact" href="mailto:ruslanromanoff@gmail.com">ruslanromanoff@gmail.com</a>
@@ -153,6 +155,7 @@
   function playRandom(button) {
     const request = ++playRequest;
     audio.pause();
+    prepareAudioReaction();
     const choices = previewTracks.map((_,i)=>i).filter(i=>i !== currentTrack);
     currentTrack = choices[Math.floor(Math.random()*choices.length)];
     const track = previewTracks[currentTrack];
@@ -177,6 +180,50 @@
     status.textContent = 'Preview unavailable. Try Next track or open the release on Apple Music.';
     updatePlayButtons();
   });
+
+  const reactiveLogo = document.querySelector('.artist-name');
+  let audioContext, analyser, frequencyData, reactionFrame = 0, bassLevel = 0;
+  function prepareAudioReaction() {
+    const Context = window.AudioContext || window.webkitAudioContext;
+    if (!Context) return;
+    if (!audioContext) {
+      audioContext = new Context();
+      analyser = audioContext.createAnalyser();
+      analyser.fftSize = 1024;
+      analyser.smoothingTimeConstant = .65;
+      const mediaSource = audioContext.createMediaElementSource(audio);
+      mediaSource.connect(analyser);
+      analyser.connect(audioContext.destination);
+      frequencyData = new Uint8Array(analyser.frequencyBinCount);
+    }
+    if (audioContext.state === 'suspended') audioContext.resume().catch(()=>{});
+  }
+  function resetReaction() {
+    cancelAnimationFrame(reactionFrame);
+    reactionFrame = 0;
+    bassLevel = 0;
+    reactiveLogo.style.removeProperty('--audio-scale');
+    reactiveLogo.style.removeProperty('--audio-glow');
+  }
+  function reactToAudio() {
+    if (audio.paused || audio.ended || audio.error) { resetReaction(); return; }
+    if (analyser && !motion.matches && !document.hidden) {
+      analyser.getByteFrequencyData(frequencyData);
+      const binHz = audioContext.sampleRate / analyser.fftSize;
+      const low = Math.max(1, Math.floor(45 / binHz));
+      const high = Math.min(frequencyData.length-1, Math.ceil(180 / binHz));
+      let energy = 0;
+      for (let i=low;i<=high;i++) energy += frequencyData[i];
+      const target = Math.pow(energy / ((high-low+1)*255), 2);
+      bassLevel += (target-bassLevel) * (target > bassLevel ? .75 : .23);
+      reactiveLogo.style.setProperty('--audio-scale', String(1 + bassLevel * .0175));
+      reactiveLogo.style.setProperty('--audio-glow', `${4 + bassLevel * 18}px`);
+    }
+    reactionFrame = requestAnimationFrame(reactToAudio);
+  }
+  audio.addEventListener('playing',()=>{cancelAnimationFrame(reactionFrame);reactToAudio();});
+  ['pause','ended','error','emptied','waiting'].forEach(event=>audio.addEventListener(event,resetReaction));
+  motion.addEventListener('change',()=>{if(motion.matches)resetReaction();else if(!audio.paused)reactToAudio();});
 </script>
 </body>
 </html>
