@@ -20,3 +20,5 @@ Updated background selection (2026-10-20): Cinderblock (#1), Van Damme (#2), Mon
 Artist wordmark: rouman-logo.png copied from /Volumes/PROD/LOGO/WHITE/WHITE.png, selected white transparent variant. Portrait displayed with rounded corners and responsive sizing.
 
 Generated logo: rouman-logo-sculpted.png. Built-in ImageGen edit of artist original BLACK.png. Prompt: Preserve original ROUMAN silhouette and negative spaces; substantial polished smoked crystal, gunmetal chrome bevels, restrained amber/violet rim lighting, nearly frontal, transparent background, no additional elements. Original logo kept unchanged.
+
+Beatport icon: Simple Icons (CC0), https://github.com/simple-icons/simple-icons/blob/develop/icons/beatport.svg.
