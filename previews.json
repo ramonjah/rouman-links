@@ -350,5 +350,70 @@
     "rank": null,
     "spotify": "https://open.spotify.com/search/Rouman%20Voyager%20One",
     "direct": false
+  },
+  {
+    "title": "Bassface",
+    "artist": "Teddy Killerz & Rouman",
+    "date": "2026-10-30",
+    "url": "https://geo-samples.beatport.com/track/25d5d59e-868b-43a1-ad78-8df9230ec2af.LOFI.mp3",
+    "source": "https://www.beatport.com/release/bassface/7544550",
+    "rank": null,
+    "preorder": true,
+    "label": "BEASTMODE",
+    "spotify": null,
+    "cover": "covers/bassface.jpg",
+    "provider": "Beatport"
+  },
+  {
+    "title": "The Gun Go Wow",
+    "artist": "Rouman",
+    "date": "2026-11-13",
+    "url": "https://geo-samples.beatport.com/track/c1a66de9-d961-4bca-81e7-9ca5d7878848.LOFI.mp3",
+    "source": "https://www.beatport.com/release/push-to-dist-ep/7612726",
+    "rank": null,
+    "preorder": true,
+    "label": "War On Silence",
+    "spotify": null,
+    "cover": "covers/push-to-dist-ep.jpg",
+    "provider": "Beatport"
+  },
+  {
+    "title": "Click Clack",
+    "artist": "Rouman",
+    "date": "2026-11-13",
+    "url": "https://geo-samples.beatport.com/track/ee47aec7-149b-49d0-b56b-2d791c4cf64c.LOFI.mp3",
+    "source": "https://www.beatport.com/release/push-to-dist-ep/7612726",
+    "rank": null,
+    "preorder": true,
+    "label": "War On Silence",
+    "spotify": null,
+    "cover": "covers/push-to-dist-ep.jpg",
+    "provider": "Beatport"
+  },
+  {
+    "title": "Push To Dist",
+    "artist": "Rouman",
+    "date": "2026-11-13",
+    "url": "https://geo-samples.beatport.com/track/517fec84-3240-4339-9017-069b7f46d314.LOFI.mp3",
+    "source": "https://www.beatport.com/release/push-to-dist-ep/7612726",
+    "rank": null,
+    "preorder": true,
+    "label": "War On Silence",
+    "spotify": null,
+    "cover": "covers/push-to-dist-ep.jpg",
+    "provider": "Beatport"
+  },
+  {
+    "title": "He So Good",
+    "artist": "Rouman",
+    "date": "2026-11-13",
+    "url": "https://geo-samples.beatport.com/track/b0d33140-832f-43a3-8437-c3a22208aace.LOFI.mp3",
+    "source": "https://www.beatport.com/release/push-to-dist-ep/7612726",
+    "rank": null,
+    "preorder": true,
+    "label": "War On Silence",
+    "spotify": null,
+    "cover": "covers/push-to-dist-ep.jpg",
+    "provider": "Beatport"
   }
 ]
