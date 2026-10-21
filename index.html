@@ -50,13 +50,13 @@
     body{isolation:auto;overflow-x:clip}
     body::before{content:none}
     .background{position:fixed;inset:0 0 auto;height:100vh;height:100lvh;overflow:hidden;pointer-events:none;z-index:0;contain:paint}
-    .background::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0a0b0a73,#0a0b0ae3 32%,#0a0b0ae3 68%,#0a0b0a73)}
+    .background::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0a0b0a8a,#0a0b0aeb 32%,#0a0b0aeb 68%,#0a0b0a8a)}
     .cover-wall{position:absolute;inset:-20%;z-index:auto;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));transition:none}
     .cover-wall img{display:block;min-width:0;filter:none}
     main{position:relative;z-index:1;padding-bottom:max(40px,env(safe-area-inset-bottom))}
     @media(max-width:700px),(hover:none){
       .cover-wall{inset:-18% -40%;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));animation:mobile-drift 28s ease-in-out infinite;transform:rotate(-12deg)}
-      .background::after{background:#0a0b0ac7}
+      .background::after{background:#0a0b0ad4}
       .link{backdrop-filter:none;-webkit-backdrop-filter:none;background:#10110ff0}
     }
     @keyframes mobile-drift{0%,100%{transform:translate3d(-10px,-14px,0) rotate(-12deg)}50%{transform:translate3d(10px,14px,0) rotate(-12deg)}}
