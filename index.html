@@ -55,11 +55,11 @@
     .cover-wall img{display:block;min-width:0;filter:none}
     main{position:relative;z-index:1;padding-bottom:max(40px,env(safe-area-inset-bottom))}
     @media(max-width:700px),(hover:none){
-      .cover-wall{inset:-40px;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));animation:mobile-drift 28s ease-in-out infinite;transform:translate3d(0,0,0)}
+      .cover-wall{inset:-18% -40%;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));animation:mobile-drift 28s ease-in-out infinite;transform:rotate(-12deg)}
       .background::after{background:#0a0b0ac7}
       .link{backdrop-filter:none;-webkit-backdrop-filter:none;background:#10110ff0}
     }
-    @keyframes mobile-drift{0%,100%{transform:translate3d(-10px,-14px,0)}50%{transform:translate3d(10px,14px,0)}}
+    @keyframes mobile-drift{0%,100%{transform:translate3d(-10px,-14px,0) rotate(-12deg)}50%{transform:translate3d(10px,14px,0) rotate(-12deg)}}
     @media(prefers-reduced-motion:reduce){.cover-wall{animation:none;transform:none;will-change:auto}}
     /* Extruded silhouette follows the original transparent logo exactly. */
     h1.artist-name{isolation:isolate;transform:perspective(900px) rotateX(8deg) rotateY(-8deg);transform-origin:center;filter:drop-shadow(10px 18px 14px #0009)}
@@ -283,6 +283,7 @@
     @keyframes mobile-brand-flow{0%,100%{border-color:#bfc3d080}50%{border-color:rgba(var(--brand-rgb),.65)}}
     @keyframes mobile-brand-sheen{from{background-position:150% 0}to{background-position:-150% 0}}
     @media(prefers-reduced-motion:reduce){.stage-lasers.music-active::after,.service-link,.service-link::before{animation:none}.service-link::before{opacity:0}}
+    @media(max-width:700px) and (prefers-reduced-motion:reduce){.cover-wall{animation:none;transform:rotate(-12deg)}}
   </style>
 </head>
 <body>
