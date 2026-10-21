@@ -128,10 +128,10 @@
     h1.artist-name.is-playing{transform:scale(var(--audio-scale,1));filter:drop-shadow(0 5px 0 #24191e);animation:none;will-change:transform}
     h1.artist-name.is-playing::after{animation:logo-clean-sheen 3s ease-in-out infinite;opacity:1}
     @media(prefers-reduced-motion:reduce){h1.artist-name.is-playing{transform:none;will-change:auto}h1.artist-name::after,h1.artist-name.is-playing::after{animation:none;background-position:120% 0,0 0}}
-    h1.artist-name{filter:drop-shadow(0 5px 0 #24191e) drop-shadow(-8px 14px 12px #ff98354d) drop-shadow(8px 18px 16px #b59ae54d)}
+    h1.artist-name{filter:drop-shadow(0 5px 0 #24191e) drop-shadow(-8px 14px 12px #ff98352b) drop-shadow(8px 18px 12px #b59ae52b)}
     h1.artist-name::after{background-image:linear-gradient(115deg,#ffe8bb 0%,#ffbf72 18%,#ff8057 36%,#d68aa9 54%,#b59ae5 72%,#efbed2 86%,#ffe8bb 100%);background-size:300% 100%;animation:logo-color-flow 20s linear infinite;opacity:1}
     @keyframes logo-color-flow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-    h1.artist-name.is-playing{filter:drop-shadow(0 5px 0 #24191e) drop-shadow(-8px 14px var(--audio-glow,12px) #ff983566) drop-shadow(8px 18px 16px #b59ae566)}
+    h1.artist-name.is-playing{filter:drop-shadow(0 5px 0 #24191e) drop-shadow(-8px 14px var(--audio-glow,8px) #ff98353d) drop-shadow(8px 18px 12px #b59ae53d)}
     h1.artist-name.is-playing::after{animation:logo-color-flow 20s linear infinite}
     @media(prefers-reduced-motion:reduce){h1.artist-name::after,h1.artist-name.is-playing::after{animation:none;background-position:50% 50%}}
   </style>
