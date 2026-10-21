@@ -128,16 +128,6 @@
     h1.artist-name.is-playing{transform:scale(var(--audio-scale,1));filter:drop-shadow(0 5px 0 #24191e);animation:none;will-change:transform}
     h1.artist-name.is-playing::after{animation:logo-clean-sheen 3s ease-in-out infinite;opacity:1}
     @media(prefers-reduced-motion:reduce){h1.artist-name.is-playing{transform:none;will-change:auto}h1.artist-name::after,h1.artist-name.is-playing::after{animation:none;background-position:120% 0,0 0}}
-    /* Solid extrusion: stepped silhouettes form a continuous side wall. */
-    h1.artist-name{transform:perspective(1200px) rotateY(-6deg) rotateX(4deg);filter:drop-shadow(9px 16px 9px #0009)}
-    h1.artist-name::before{background:#995239;transform:translate(1px,1px);filter:drop-shadow(1px 1px 0 #935039) drop-shadow(1px 1px 0 #874533) drop-shadow(2px 2px 0 #713a30) drop-shadow(2px 2px 0 #5b2e2b) drop-shadow(2px 2px 0 #47232a) drop-shadow(2px 2px 0 #2e1b25)}
-    .artist-logo{filter:drop-shadow(-1px -1px 0 #ffe9bfbb) drop-shadow(1px 1px 0 #532b33)}
-    h1.artist-name::after{background-image:linear-gradient(110deg,transparent 35%,#fff9 49%,#fff2 52%,transparent 65%),linear-gradient(160deg,#fff0c0 0%,#ffc36d 20%,#f9804b 44%,#c84e50 70%,#83465d 100%)}
-    h1.artist-name.is-playing{transform:perspective(1200px) rotateY(-6deg) rotateX(4deg) scale(var(--audio-scale,1));filter:drop-shadow(9px 16px 9px #0009)}
-    @media(prefers-reduced-motion:reduce){h1.artist-name.is-playing{transform:perspective(1200px) rotateY(-6deg) rotateX(4deg)}}
-    h1.artist-name::before{content:none}
-    .logo-depth{position:absolute;inset:0;z-index:-1;pointer-events:none}
-    .logo-depth img{position:absolute;inset:0;width:100%;height:100%;transform:translate(calc(var(--depth)*1px),calc(var(--depth)*1px));filter:brightness(var(--shade)) sepia(.7) saturate(2)}
   </style>
 </head>
 <body>
@@ -151,7 +141,7 @@
   </div></div>
   <main>
     <header class="profile">
-      <h1 class="artist-name"><span class="logo-depth" aria-hidden="true"><img src="rouman-logo.png" alt="" style="--depth:11;--shade:0.130"><img src="rouman-logo.png" alt="" style="--depth:10;--shade:0.148"><img src="rouman-logo.png" alt="" style="--depth:9;--shade:0.166"><img src="rouman-logo.png" alt="" style="--depth:8;--shade:0.184"><img src="rouman-logo.png" alt="" style="--depth:7;--shade:0.202"><img src="rouman-logo.png" alt="" style="--depth:6;--shade:0.220"><img src="rouman-logo.png" alt="" style="--depth:5;--shade:0.238"><img src="rouman-logo.png" alt="" style="--depth:4;--shade:0.256"><img src="rouman-logo.png" alt="" style="--depth:3;--shade:0.274"><img src="rouman-logo.png" alt="" style="--depth:2;--shade:0.292"><img src="rouman-logo.png" alt="" style="--depth:1;--shade:0.310"></span><img class="artist-logo" src="rouman-logo.png" alt="ROUMAN" width="1210" height="751"></h1>
+      <h1 class="artist-name"><img class="artist-logo" src="rouman-logo.png" alt="ROUMAN" width="1210" height="751"></h1>
     </header>
     <nav class="links" aria-label="Music and social links">
       <div class="music-row"><a class="link" href="https://open.spotify.com/artist/1l3F9u1ySUlZbp3cbl4ZmZ" target="_blank" rel="noopener noreferrer"><span>Spotify</span><svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M6.5 9c4-1.4 7.4-1 11 1M7.5 12c3.2-1 6.3-.7 9 1M8.5 15c2.3-.6 4.6-.4 7 .8"/></svg></a><button class="preview-play" type="button" aria-label="Play random Rouman preview — Spotify" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
