@@ -215,6 +215,38 @@
     .release-art,.preorder-cover{background:linear-gradient(110deg,#19171c 30%,#332a2d 45%,#19171c 60%);background-size:250% 100%}
     .image-pending{animation:image-loading 2s linear infinite}.image-pending img{opacity:0}.image-ready img{opacity:1;transition:opacity .3s}.image-failed{position:relative;min-height:120px}.image-failed::after{content:"Artwork unavailable";position:absolute;inset:0;display:grid;place-items:center;color:#bfb5a9;font-size:12px;pointer-events:none}@keyframes image-loading{to{background-position:-250% 0}}
     @media(prefers-reduced-motion:reduce){.loader-bars i,.image-pending{animation:none}.image-ready img{transition:none}}
+    /* Liquid glass: translucent bodies, cool rim reflections and restrained underlight. */
+    :root{--glass-border:#e3eaff38;--glass-text:#f4f2ed}
+    .link,.preview-play,.preview-next,.page-tabs,.release-filters,.release-card,.preview-player,.booking-panel{
+      background:linear-gradient(145deg,#e6edff16 0%,#ffffff08 38%,#a2abc90a 70%,#ffffff12 100%),#10131bc9;
+      border:1px solid var(--glass-border);border-top-color:#ffffff66;border-bottom-color:#b8c6ef22;
+      box-shadow:inset 0 1px 0 #ffffff26,inset 0 -1px 0 #ceddff12,0 8px 24px #0004,0 10px 20px -15px #c8b4ed55;
+      backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);
+      border-radius:16px;color:var(--glass-text);
+    }
+    .links{gap:12px}.music-row{gap:10px}.link{padding:17px 20px}.preview-play{border-radius:16px}
+    .link::after,.preview-play::after,.preview-next::after{height:1px;bottom:0;opacity:.55;background-image:linear-gradient(90deg,transparent,#c5b8ec88,#fff0cebb,#d9eaffaa,transparent)}
+    .link::before{background:radial-gradient(160px circle at var(--x,50%) var(--y,0%),#ffffff16,transparent 75%);background-size:auto;background-position:center;opacity:.35;transition:opacity .25s}
+    .link .platform-icon,.preview-play{color:#deddeb}.link:hover .platform-icon,.link:focus-visible .platform-icon{color:#fff0cf}
+    .page-tabs,.release-filters{padding:6px;gap:6px;border-radius:18px}
+    .page-tabs button,.release-filters button,.preview-next,.release-info>a,.preview-source{
+      border:1px solid #ffffff26;border-top-color:#ffffff47;border-radius:11px;
+      background:linear-gradient(150deg,#ffffff12,#b8c7eb06 70%);box-shadow:inset 0 1px 0 #ffffff14,0 3px 8px #0002;color:#d7d8e2;
+    }
+    .page-tabs button[aria-selected="true"],.release-filters button[aria-pressed="true"]{background:linear-gradient(130deg,#ffe4b52b,#d5c3ff21 65%,#d9eaff1a);border-color:#fff0d166;color:#fff4df;box-shadow:inset 0 1px 0 #ffffff47,0 4px 12px #0003}
+    .page-tabs button::after,.release-filters button::after{opacity:.4}
+    .release-card{border-radius:20px;overflow:hidden;backdrop-filter:none;-webkit-backdrop-filter:none}
+    .release-info{background:linear-gradient(145deg,#ffffff0d,#b8c7eb04);border-top:1px solid #ffffff29;padding:20px}
+    .release-info .release-date,.catalog-note{color:#c6c0d1}.release-info p{color:#c4c5ce}
+    .release-play{border-radius:50%;background:linear-gradient(145deg,#ffffff33,#b8c7eb12),#141924a6;border-color:#ffffff6b;color:#f7eddc;box-shadow:inset 0 1px 0 #ffffff66,0 5px 18px #0005;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    .preview-play[aria-pressed="true"],.release-art[aria-pressed="true"] .release-play{background:linear-gradient(140deg,#ffe5bb40,#bda5ef29),#1a1c2ad9;color:#fff5db;border-color:#ffe5b58c;box-shadow:inset 0 1px 0 #ffffff66,0 6px 20px #0004,0 0 14px #d6b6f326}
+    .booking-panel{padding:12px}.booking-panel .link{border-radius:12px;backdrop-filter:none;-webkit-backdrop-filter:none}.booking-detail{color:#d6cede}
+    .preorder-badge{background:linear-gradient(140deg,#ffe5bb1f,#bda5ef18);border-color:#e4d9ef44;color:#f4e6d0}
+    .site-footer{border-color:#ffffff26;color:#b6b6c1}.site-footer a{color:#dfd8e6}
+    @media(hover:hover) and (pointer:fine){.link:hover,.preview-play:hover,.preview-next:hover,.page-tabs button:hover,.release-filters button:hover,.release-info>a:hover,.preview-source:hover{border-color:#ffffff8c;box-shadow:inset 0 1px 0 #ffffff66,inset 0 -1px 0 #d9eaff33,0 10px 28px #0005,0 10px 24px -15px #c5b8ec88;transform:translateY(-2px)}.link:hover::before{opacity:.9}}
+    .link:active,.preview-play:active,.preview-next:active,.page-tabs button:active,.release-filters button:active,.release-info>a:active,.preview-source:active{transform:translateY(1px) scale(.985);box-shadow:inset 0 2px 6px #0004,0 2px 6px #0003}
+    @media(max-width:700px),(hover:none){.link,.preview-play,.preview-next,.page-tabs,.release-filters,.preview-player,.booking-panel{backdrop-filter:none;-webkit-backdrop-filter:none;background:linear-gradient(145deg,#e6edff18,#ffffff08 45%,#b4c2e612),#141820eb}.release-play{backdrop-filter:none;-webkit-backdrop-filter:none}}
+    @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.link,.preview-play,.page-tabs,.release-filters,.release-card,.preview-player,.booking-panel{background-color:#181c27}}
   </style>
 </head>
 <body>
