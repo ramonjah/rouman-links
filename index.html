@@ -169,6 +169,12 @@
     @keyframes laser-scan{from{transform:rotate(calc(var(--angle) - 17deg));opacity:.45}to{transform:rotate(calc(var(--angle) + 17deg));opacity:.85}}
     @media(max-width:700px){.laser-rig i{width:8px;left:-4px;opacity:.6;animation-duration:20s}.left-rig{left:0}.right-rig{right:0}}
     @media(prefers-reduced-motion:reduce){.stage-lasers{display:none}}
+    .stage-lasers{transition:filter .7s ease}
+    .laser-rig i{transition:width .7s ease,left .7s ease}
+    .stage-lasers.music-active{filter:brightness(1.65)}
+    .stage-lasers.music-active .laser-rig i{width:22px;left:-11px;animation-duration:5s}
+    @media(max-width:700px){.stage-lasers.music-active .laser-rig i{width:15px;left:-7.5px;animation-duration:6s}}
+    @media(prefers-reduced-motion:reduce){.stage-lasers,.laser-rig i{transition:none}}
   </style>
 </head>
 <body>
@@ -235,7 +241,9 @@
   let activeButton = null;
   let playRequest = 0;
   function updatePlayButtons() {
-    document.querySelector('.artist-name').classList.toggle('is-playing', !audio.paused && !audio.ended && !audio.error);
+    const isPlaying = !audio.paused && !audio.ended && !audio.error;
+    document.querySelector('.artist-name').classList.toggle('is-playing', isPlaying);
+    document.querySelector('.stage-lasers').classList.toggle('music-active', isPlaying);
     playButtons.forEach(button => {
       const playing = button === activeButton && !audio.paused;
       button.setAttribute('aria-pressed', String(playing));
