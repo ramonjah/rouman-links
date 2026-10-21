@@ -215,6 +215,25 @@
     .release-art,.preorder-cover{background:linear-gradient(110deg,#19171c 30%,#332a2d 45%,#19171c 60%);background-size:250% 100%}
     .image-pending{animation:image-loading 2s linear infinite}.image-pending img{opacity:0}.image-ready img{opacity:1;transition:opacity .3s}.image-failed{position:relative;min-height:120px}.image-failed::after{content:"Artwork unavailable";position:absolute;inset:0;display:grid;place-items:center;color:#bfb5a9;font-size:12px;pointer-events:none}@keyframes image-loading{to{background-position:-250% 0}}
     @media(prefers-reduced-motion:reduce){.loader-bars i,.image-pending{animation:none}.image-ready img{transition:none}}
+    /* Black metal with gold and violet reflections from the logo. */
+    .link,.preview-play,.preview-next,.page-tabs button,.release-filters button,.release-info>a,.preview-source,.release-play{
+      background:linear-gradient(125deg,#d9ab5917,transparent 24%,#0009 52%,#a78bd513),#0c0c10;
+      border-color:#a78b5b77;border-right-color:#78638a66;border-bottom-color:#b4966555;
+      box-shadow:inset 0 1px 0 #ffe3a847,inset 0 -1px 0 #c5a5de66,0 4px 0 #050507,0 9px 18px -10px #d4a45066;
+    }
+    .link .platform-icon{color:#dfcfb0}.preview-play,.preview-next,.release-info>a,.preview-source{color:#ead5aa}
+    .link::after,.preview-play::after,.preview-next::after,.page-tabs button::after,.release-filters button::after,.release-play::after{
+      background-image:linear-gradient(90deg,transparent,#ac8bce,#d6a64f,#ffe6ac,#bd93d7,transparent);
+    }
+    .page-tabs button[aria-selected="true"],.release-filters button[aria-pressed="true"],.preview-play[aria-pressed="true"]{
+      background:linear-gradient(125deg,#d6a64f26,transparent 48%,#ad82ce20),#101014;
+      border-color:#c7a365;color:#ffe4aa;
+    }
+    @media(hover:hover) and (pointer:fine){
+      .link:hover,.preview-play:hover,.preview-next:hover,.page-tabs button:hover,.release-filters button:hover,.release-info>a:hover,.preview-source:hover{
+        border-color:#d6b577;box-shadow:inset 0 1px 0 #ffe8b866,inset 0 -1px 0 #ddbd8888,0 5px 0 #050507,0 11px 22px -9px #d6a64f88,0 17px 28px -16px #b59ae580;
+      }
+    }
     [data-brand="spotify"]{--brand-rgb:30,215,96}
     [data-brand="soundcloud"]{--brand-rgb:255,130,44}
     [data-brand="apple"]{--brand-rgb:255,114,113}
