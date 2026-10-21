@@ -154,6 +154,11 @@
     @media(prefers-reduced-motion:reduce){h1.artist-name::after,h1.artist-name.is-playing::after{content:none;animation:none}}
     h1.artist-name.is-playing{transform:translateY(var(--audio-y,0px)) rotate(var(--audio-tilt,0deg)) scale(var(--audio-scale,1));will-change:transform}
     @media(prefers-reduced-motion:reduce){h1.artist-name.is-playing{transform:none;will-change:auto}}
+    /* Move in whole CSS pixels: avoid resampling the fine chrome edges every frame. */
+    h1.artist-name,h1.artist-name.is-playing{transform:translate3d(0,var(--audio-y,0px),0);filter:none;backface-visibility:hidden;will-change:transform}
+    .artist-logo{opacity:1;filter:none;image-rendering:auto}
+    h1.artist-name::after,h1.artist-name.is-playing::after{mix-blend-mode:normal;opacity:.25}
+    @media(prefers-reduced-motion:reduce){h1.artist-name,h1.artist-name.is-playing{transform:none;will-change:auto}}
   </style>
 </head>
 <body>
@@ -316,7 +321,7 @@
       bassLevel += (target-bassLevel)*(1-Math.exp(-dt*7));
       hitPulse *= Math.exp(-dt*11);
       reactiveLogo.style.setProperty('--audio-scale', String(1 + hitPulse*.035));
-      reactiveLogo.style.setProperty('--audio-y', `${-hitPulse*4}px`);
+      reactiveLogo.style.setProperty('--audio-y', `${-Math.round(hitPulse*5)}px`);
       reactiveLogo.style.setProperty('--audio-tilt', `${hitPulse*hitDirection*.7}deg`);
       reactiveLogo.style.setProperty('--audio-glow', `${4 + hitPulse*14}px`);
     }
