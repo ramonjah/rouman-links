@@ -70,12 +70,12 @@
     @media(max-width:500px){h1.artist-name{transform:perspective(900px) rotateX(6deg) rotateY(-6deg)}}
     @media(prefers-reduced-motion:reduce){h1.artist-name::after{animation:none}}
     .music-row{display:flex;gap:8px;min-width:0}.music-row>.link{flex:1;min-width:0}.preview-play{width:58px;flex-shrink:0;border:1px solid var(--line);border-radius:6px;background:#10110ff0;color:var(--fg);cursor:pointer;display:grid;place-items:center;touch-action:manipulation}.preview-play svg{width:21px;height:21px;fill:currentColor}.preview-play:hover,.preview-play[aria-pressed="true"]{color:#d2fc63;border-color:#a2b27d}.preview-play:focus-visible,.preview-next:focus-visible{outline:2px solid #d2fc63;outline-offset:3px}.preview-play:active{transform:scale(.96)}.preview-player{margin-top:18px;padding:16px;border:1px solid var(--line);border-radius:6px;background:#10110ff0}.preview-player[hidden]{display:none}.preview-status{font-size:13px;line-height:1.5;margin:0 0 12px}.preview-player audio{width:100%;height:36px;display:block}.preview-meta{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:12px;font-size:10px;color:#babcaf}.preview-next{border:0;background:none;color:#d2fc63;cursor:pointer;padding:8px 0;font-size:12px}
-    h1.artist-name.is-playing{animation:logo-listening 1.4s ease-in-out infinite;will-change:transform,filter}
+    h1.artist-name.is-playing{animation:logo-listening .56s ease-in-out infinite;will-change:transform,filter}
     h1.artist-name.is-playing::after{animation-duration:3s}
     @keyframes logo-listening{
       0%,100%{transform:perspective(900px) rotateX(7deg) rotateY(-7deg) scale(1);filter:drop-shadow(8px 14px 12px #0009) drop-shadow(0 0 5px #ff98354d)}
-      35%{transform:perspective(900px) rotateX(5deg) rotateY(-5deg) scale(1.035);filter:drop-shadow(8px 14px 12px #0009) drop-shadow(0 0 18px #ff983580)}
-      65%{transform:perspective(900px) rotateX(7deg) rotateY(-7deg) scale(1.012);filter:drop-shadow(8px 14px 12px #0009) drop-shadow(0 0 9px #b59ae580)}
+      35%{transform:perspective(900px) rotateX(6deg) rotateY(-6deg) scale(1.0175);filter:drop-shadow(8px 14px 12px #0009) drop-shadow(0 0 18px #ff983580)}
+      65%{transform:perspective(900px) rotateX(7deg) rotateY(-7deg) scale(1.006);filter:drop-shadow(8px 14px 12px #0009) drop-shadow(0 0 9px #b59ae580)}
     }
     @media(prefers-reduced-motion:reduce){h1.artist-name.is-playing{animation:none;will-change:auto;filter:drop-shadow(0 0 10px #ff983560)}h1.artist-name.is-playing::after{animation:none}}
   </style>
