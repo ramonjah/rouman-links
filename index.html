@@ -143,6 +143,11 @@
     h1.artist-name.is-playing{transform:scale(var(--audio-scale,1));filter:drop-shadow(0 7px 9px #0007)}
     h1.artist-name.is-playing::after{animation:glass-reflection 12s linear infinite}
     @media(prefers-reduced-motion:reduce){h1.artist-name::after,h1.artist-name.is-playing::after{animation:none;background-position:70% 0,0 0}h1.artist-name.is-playing{transform:none}}
+    h1.artist-name::before,h1.artist-name::after,h1.artist-name.is-playing::after{content:none;animation:none}
+    .artist-logo{opacity:1;filter:none}
+    h1.artist-name{transform:none;filter:drop-shadow(0 8px 10px #0009)}
+    h1.artist-name.is-playing{transform:scale(var(--audio-scale,1));filter:drop-shadow(0 8px 10px #0009)}
+    @media(prefers-reduced-motion:reduce){h1.artist-name.is-playing{transform:none}}
   </style>
 </head>
 <body>
@@ -156,7 +161,7 @@
   </div></div>
   <main>
     <header class="profile">
-      <h1 class="artist-name"><img class="artist-logo" src="rouman-logo.png" alt="ROUMAN" width="1210" height="751"></h1>
+      <h1 class="artist-name"><img class="artist-logo" src="rouman-logo-sculpted.png" alt="ROUMAN" width="1592" height="988"></h1>
     </header>
     <nav class="links" aria-label="Music and social links">
       <div class="music-row"><a class="link" href="https://open.spotify.com/artist/1l3F9u1ySUlZbp3cbl4ZmZ" target="_blank" rel="noopener noreferrer"><span>Spotify</span><svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M6.5 9c4-1.4 7.4-1 11 1M7.5 12c3.2-1 6.3-.7 9 1M8.5 15c2.3-.6 4.6-.4 7 .8"/></svg></a><button class="preview-play" type="button" aria-label="Play random Rouman preview — Spotify" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>

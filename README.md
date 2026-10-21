@@ -18,3 +18,5 @@ Background covers: Monkey Head and Tonight from the Apple Music release pages li
 Updated background selection (2026-10-20): Cinderblock (#1), Van Damme (#2), Monkey Head (#4), Smoke (#5), Filthy Dog Rouman Remix (#6), Tonight (#9) from Beatport artist Top Ten Tracks (search index crawled last week). Artwork sources for new images in covers/sources.json. Voidout no longer displayed.
 
 Artist wordmark: rouman-logo.png copied from /Volumes/PROD/LOGO/WHITE/WHITE.png, selected white transparent variant. Portrait displayed with rounded corners and responsive sizing.
+
+Generated logo: rouman-logo-sculpted.png. Built-in ImageGen edit of artist original BLACK.png. Prompt: Preserve original ROUMAN silhouette and negative spaces; substantial polished smoked crystal, gunmetal chrome bevels, restrained amber/violet rim lighting, nearly frontal, transparent background, no additional elements. Original logo kept unchanged.
