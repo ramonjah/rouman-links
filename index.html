@@ -264,6 +264,25 @@
       outline-offset:-4px;outline-width:2px;
     }
     @media(max-width:420px){.link{--cut:10px;padding-left:20px;padding-right:20px}.preview-play{--cut:8px}}
+    /* Subtle stage flashes stay behind the controls and stop with playback. */
+    .stage-lasers::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;background:radial-gradient(ellipse at 50% 25%,#d8d7f0 0%,#ac9bbd55 45%,transparent 80%)}
+    .stage-lasers.music-active::after{animation:stage-strobe .7s linear infinite}
+    @keyframes stage-strobe{0%,13%,100%{opacity:0}5%{opacity:.09}8%{opacity:.025}}
+    @media(hover:none),(pointer:coarse){
+      .service-link{animation:mobile-brand-flow 7s ease-in-out infinite}
+      .service-link::before{opacity:1;background:linear-gradient(110deg,transparent 10%,rgba(var(--brand-rgb),.17) 45%,#ffffff0b 52%,transparent 80%);background-size:300% 100%;animation:mobile-brand-sheen 7s linear infinite}
+      .service-link::after{background:linear-gradient(90deg,transparent,rgba(var(--brand-rgb),.8),#dedce8,rgba(var(--brand-rgb),.65),transparent);background-size:220% 100%}
+      [data-brand="instagram"]::before{background-image:linear-gradient(110deg,transparent 10%,#ffca3a17 32%,#ff57452b 46%,#e84b9d28 60%,transparent 80%)}
+      [data-brand="instagram"]::after{background-image:linear-gradient(90deg,transparent,#ffcb52,#ff5b49,#ed64ad,transparent)}
+      [data-brand="soundcloud"],[data-brand="soundcloud"]::before{animation-delay:-1.1s}
+      [data-brand="apple"],[data-brand="apple"]::before{animation-delay:-2.2s}
+      [data-brand="beatport"],[data-brand="beatport"]::before{animation-delay:-3.3s}
+      [data-brand="telegram"],[data-brand="telegram"]::before{animation-delay:-4.4s}
+      [data-brand="instagram"],[data-brand="instagram"]::before{animation-delay:-5.5s}
+    }
+    @keyframes mobile-brand-flow{0%,100%{border-color:#bfc3d080}50%{border-color:rgba(var(--brand-rgb),.65)}}
+    @keyframes mobile-brand-sheen{from{background-position:150% 0}to{background-position:-150% 0}}
+    @media(prefers-reduced-motion:reduce){.stage-lasers.music-active::after,.service-link,.service-link::before{animation:none}.service-link::before{opacity:0}}
   </style>
 </head>
 <body>
@@ -276,8 +295,8 @@
     <img src="covers/tonight.jpg" alt="">
   </div></div>
   <div class="stage-lasers" aria-hidden="true">
-    <div class="laser-rig left-rig"><i style="--angle:-35deg;--delay:0s"></i><i style="--angle:-15deg;--delay:-2s"></i><i style="--angle:5deg;--delay:-4s"></i><i style="--angle:25deg;--delay:-6s"></i></div>
-    <div class="laser-rig right-rig"><i style="--angle:-25deg;--delay:-3s"></i><i style="--angle:-5deg;--delay:-5s"></i><i style="--angle:15deg;--delay:-7s"></i><i style="--angle:35deg;--delay:-1s"></i></div>
+    <div class="laser-rig left-rig"><i style="--angle:-45deg;--delay:0.0s"></i><i style="--angle:-35deg;--delay:-1.3s"></i><i style="--angle:-25deg;--delay:-2.6s"></i><i style="--angle:-15deg;--delay:-3.9000000000000004s"></i><i style="--angle:-5deg;--delay:-5.2s"></i><i style="--angle:5deg;--delay:-6.5s"></i><i style="--angle:15deg;--delay:-7.800000000000001s"></i><i style="--angle:25deg;--delay:-9.1s"></i><i style="--angle:35deg;--delay:-10.4s"></i><i style="--angle:45deg;--delay:-11.700000000000001s"></i></div>
+    <div class="laser-rig right-rig"><i style="--angle:-40deg;--delay:0.0s"></i><i style="--angle:-30deg;--delay:-1.3s"></i><i style="--angle:-20deg;--delay:-2.6s"></i><i style="--angle:-10deg;--delay:-3.9000000000000004s"></i><i style="--angle:0deg;--delay:-5.2s"></i><i style="--angle:10deg;--delay:-6.5s"></i><i style="--angle:20deg;--delay:-7.800000000000001s"></i><i style="--angle:30deg;--delay:-9.1s"></i><i style="--angle:40deg;--delay:-10.4s"></i><i style="--angle:50deg;--delay:-11.700000000000001s"></i></div>
   </div>
   <main>
     <header class="profile">
