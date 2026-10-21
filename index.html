@@ -148,6 +148,10 @@
     h1.artist-name{transform:none;filter:drop-shadow(0 8px 10px #0009)}
     h1.artist-name.is-playing{transform:scale(var(--audio-scale,1));filter:drop-shadow(0 8px 10px #0009)}
     @media(prefers-reduced-motion:reduce){h1.artist-name.is-playing{transform:none}}
+    /* Light passes are clipped to the sculpted logo's alpha. */
+    h1.artist-name::after,h1.artist-name.is-playing::after{content:"";position:absolute;inset:0;pointer-events:none;-webkit-mask:url('rouman-logo-sculpted.png') center/100% 100% no-repeat;mask:url('rouman-logo-sculpted.png') center/100% 100% no-repeat;background-image:linear-gradient(115deg,transparent 42%,#fff5 49%,#ffdc9b38 51%,transparent 58%),linear-gradient(75deg,transparent 38%,#b59ae52b 48%,#ffbf7226 53%,transparent 63%);background-size:320% 100%,280% 100%;background-position:120% 0,-20% 0;mix-blend-mode:screen;opacity:.7;filter:none;animation:sculpted-reflections 11s linear infinite}
+    @keyframes sculpted-reflections{0%{background-position:120% 0,-20% 0}100%{background-position:-20% 0,120% 0}}
+    @media(prefers-reduced-motion:reduce){h1.artist-name::after,h1.artist-name.is-playing::after{content:none;animation:none}}
   </style>
 </head>
 <body>
