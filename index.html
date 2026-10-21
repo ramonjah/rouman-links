@@ -175,6 +175,7 @@
     .stage-lasers.music-active .laser-rig i{width:22px;left:-11px;animation-duration:5s}
     @media(max-width:700px){.stage-lasers.music-active .laser-rig i{width:15px;left:-7.5px;animation-duration:6s}}
     @media(prefers-reduced-motion:reduce){.stage-lasers,.laser-rig i{transition:none}}
+    .booking{margin-top:24px}.booking-toggle{width:100%;color:var(--fg);font:inherit;cursor:pointer;text-align:left}.booking-chevron{transition:transform .25s}.booking-toggle[aria-expanded="true"] .booking-chevron{transform:rotate(180deg)}.booking-panel{display:flex;flex-direction:column;gap:12px;margin-top:14px;animation:booking-reveal .25s ease-out}.booking-panel[hidden]{display:none}.booking-panel .link{font-size:13px;gap:10px;padding:14px 16px;min-height:54px}.booking-detail{font-size:11px;color:#c9b8a8;overflow-wrap:anywhere;text-align:right}@keyframes booking-reveal{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.booking-panel{animation:none}.booking-chevron{transition:none}}
   </style>
 </head>
 <body>
@@ -207,7 +208,13 @@
       <audio id="preview-audio" crossorigin="anonymous" controls preload="none"></audio>
       <div class="preview-meta"><a class="preview-source" target="_blank" rel="noopener noreferrer">Preview · Apple Music</a><button class="preview-next" type="button">Next track ↻</button></div>
     </div>
-    <a class="contact" href="mailto:ruslanromanoff@gmail.com">ruslanromanoff@gmail.com</a>
+    <section class="booking" aria-label="Booking contacts">
+      <button class="link booking-toggle" type="button" aria-expanded="false" aria-controls="booking-panel"><span>Booking</span><svg class="platform-icon booking-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div id="booking-panel" class="booking-panel" hidden>
+        <a class="link" href="mailto:ruslanromanoff@gmail.com"><span>Email</span><span class="booking-detail">ruslanromanoff@gmail.com</span></a>
+        <a class="link" href="https://t.me/roumandnb" target="_blank" rel="noopener noreferrer"><span>Telegram</span><span class="booking-detail">@roumandnb</span></a>
+      </div>
+    </section>
   </main>
 <script>
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -352,6 +359,13 @@
   audio.addEventListener('playing',()=>{cancelAnimationFrame(reactionFrame);reactToAudio();});
   ['pause','ended','error','emptied','waiting'].forEach(event=>audio.addEventListener(event,resetReaction));
   motion.addEventListener('change',()=>{if(motion.matches)resetReaction();else if(!audio.paused)reactToAudio();});
+  const bookingToggle = document.querySelector('.booking-toggle');
+  const bookingPanel = document.querySelector('#booking-panel');
+  bookingToggle.addEventListener('click',()=>{
+    const expanded = bookingToggle.getAttribute('aria-expanded') === 'true';
+    bookingToggle.setAttribute('aria-expanded',String(!expanded));
+    bookingPanel.hidden = expanded;
+  });
 </script>
 </body>
 </html>
