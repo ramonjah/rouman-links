@@ -69,6 +69,7 @@
     @keyframes logo-metal{0%,100%{background-position:0 0,0% 50%}50%{background-position:0 0,100% 50%}}
     @media(max-width:500px){h1.artist-name{transform:perspective(900px) rotateX(6deg) rotateY(-6deg)}}
     @media(prefers-reduced-motion:reduce){h1.artist-name::after{animation:none}}
+    .music-row{display:flex;gap:8px;min-width:0}.music-row>.link{flex:1;min-width:0}.preview-play{width:58px;flex-shrink:0;border:1px solid var(--line);border-radius:6px;background:#10110ff0;color:var(--fg);cursor:pointer;display:grid;place-items:center;touch-action:manipulation}.preview-play svg{width:21px;height:21px;fill:currentColor}.preview-play:hover,.preview-play[aria-pressed="true"]{color:#d2fc63;border-color:#a2b27d}.preview-play:focus-visible,.preview-next:focus-visible{outline:2px solid #d2fc63;outline-offset:3px}.preview-play:active{transform:scale(.96)}.preview-player{margin-top:18px;padding:16px;border:1px solid var(--line);border-radius:6px;background:#10110ff0}.preview-player[hidden]{display:none}.preview-status{font-size:13px;line-height:1.5;margin:0 0 12px}.preview-player audio{width:100%;height:36px;display:block}.preview-meta{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:12px;font-size:10px;color:#babcaf}.preview-next{border:0;background:none;color:#d2fc63;cursor:pointer;padding:8px 0;font-size:12px}
   </style>
 </head>
 <body>
@@ -85,13 +86,18 @@
       <h1 class="artist-name"><img class="artist-logo" src="rouman-logo.png" alt="ROUMAN" width="1210" height="751"></h1>
     </header>
     <nav class="links" aria-label="Music and social links">
-      <a class="link" href="https://open.spotify.com/artist/1l3F9u1ySUlZbp3cbl4ZmZ" target="_blank" rel="noopener noreferrer"><span>Spotify</span><svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M6.5 9c4-1.4 7.4-1 11 1M7.5 12c3.2-1 6.3-.7 9 1M8.5 15c2.3-.6 4.6-.4 7 .8"/></svg></a>
-      <a class="link" href="https://soundcloud.com/roumanmusic" target="_blank" rel="noopener noreferrer"><span>SoundCloud</span><svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13v4m3-7v7m3-10v10m3-11v11h6a4 4 0 0 0 0-8 6 6 0 0 0-6-3"/></svg></a>
-      <a class="link" href="https://music.apple.com/us/artist/rouman/1574340405" target="_blank" rel="noopener noreferrer"><span>Apple Music</span><svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17V5l10-2v12M10 9l10-2"/><ellipse cx="7" cy="18" rx="3" ry="2.5"/><ellipse cx="17" cy="16" rx="3" ry="2.5"/></svg></a>
-      <a class="link" href="https://www.beatport.com/artist/rouman/1008372" target="_blank" rel="noopener noreferrer"><span>Beatport</span><svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16V8h4l4 8 4-8h4v8M4 12h4m8 0h4"/></svg></a>
+      <div class="music-row"><a class="link" href="https://open.spotify.com/artist/1l3F9u1ySUlZbp3cbl4ZmZ" target="_blank" rel="noopener noreferrer"><span>Spotify</span><svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M6.5 9c4-1.4 7.4-1 11 1M7.5 12c3.2-1 6.3-.7 9 1M8.5 15c2.3-.6 4.6-.4 7 .8"/></svg></a><button class="preview-play" type="button" aria-label="Play random Rouman preview — Spotify" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="music-row"><a class="link" href="https://soundcloud.com/roumanmusic" target="_blank" rel="noopener noreferrer"><span>SoundCloud</span><svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13v4m3-7v7m3-10v10m3-11v11h6a4 4 0 0 0 0-8 6 6 0 0 0-6-3"/></svg></a><button class="preview-play" type="button" aria-label="Play random Rouman preview — SoundCloud" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="music-row"><a class="link" href="https://music.apple.com/us/artist/rouman/1574340405" target="_blank" rel="noopener noreferrer"><span>Apple Music</span><svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 17V5l10-2v12M10 9l10-2"/><ellipse cx="7" cy="18" rx="3" ry="2.5"/><ellipse cx="17" cy="16" rx="3" ry="2.5"/></svg></a><button class="preview-play" type="button" aria-label="Play random Rouman preview — Apple Music" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
+      <div class="music-row"><a class="link" href="https://www.beatport.com/artist/rouman/1008372" target="_blank" rel="noopener noreferrer"><span>Beatport</span><svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16V8h4l4 8 4-8h4v8M4 12h4m8 0h4"/></svg></a><button class="preview-play" type="button" aria-label="Play random Rouman preview — Beatport" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
       <a class="link" href="https://t.me/roumanmusic" target="_blank" rel="noopener noreferrer"><span>Telegram</span><svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-7-4 16-6-5-4 3 1-6 9-5-6 8"/></svg></a>
       <a class="link" href="https://www.instagram.com/roumandnb/" target="_blank" rel="noopener noreferrer"><span>Instagram</span><svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></a>
     </nav>
+    <div class="preview-player" hidden>
+      <p class="preview-status" role="status" aria-live="polite"></p>
+      <audio id="preview-audio" controls preload="none"></audio>
+      <div class="preview-meta"><a class="preview-source" target="_blank" rel="noopener noreferrer">Preview · Apple Music</a><button class="preview-next" type="button">Next track ↻</button></div>
+    </div>
     <a class="contact" href="mailto:ruslanromanoff@gmail.com">ruslanromanoff@gmail.com</a>
   </main>
 <script>
@@ -115,6 +121,50 @@
       wall.style.setProperty('--py', `${(event.clientY / innerHeight - .5) * 12}px`);
     });
   }, {passive: true});
+
+  const previewTracks = [{"title": "Smoke", "artist": "Teddy Killerz & Rouman", "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/78/fa/d8/78fad838-8c06-d04e-0ae4-ab0ee4bb5c31/mzaf_1176586703979036190.plus.aac.p.m4a", "source": "https://music.apple.com/us/album/smoke/1760799049?i=1760799066&uo=4"}, {"title": "Cinderblock", "artist": "AC13 & Rouman", "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/72/59/7c/72597cdf-3fc0-846a-35a7-391e06c5d3a2/mzaf_15968323859252808680.plus.aac.p.m4a", "source": "https://music.apple.com/us/album/cinderblock/1870585090?i=1870585093&uo=4"}, {"title": "Van Damme", "artist": "Rouman", "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/01/c5/69/01c5698b-d409-5c22-c0c6-9cd12a5b32ac/mzaf_11763942099449255674.plus.aac.p.m4a", "source": "https://music.apple.com/us/album/van-damme/1849212606?i=1849212607&uo=4"}, {"title": "Filthy Dog (Rouman Remix)", "artist": "Rouman, Dominator & Logan D", "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/27/47/8c/27478c26-3ef7-fb0f-6bd4-21f339d2bf86/mzaf_9260899627385795393.plus.aac.p.m4a", "source": "https://music.apple.com/us/album/filthy-dog-rouman-remix/1819774483?i=1819774488&uo=4"}];
+  const audio = document.querySelector('#preview-audio');
+  const player = document.querySelector('.preview-player');
+  const status = document.querySelector('.preview-status');
+  const source = document.querySelector('.preview-source');
+  const playButtons = [...document.querySelectorAll('.preview-play')];
+  let currentTrack = -1;
+  let activeButton = null;
+  let playRequest = 0;
+  function updatePlayButtons() {
+    playButtons.forEach(button => {
+      const playing = button === activeButton && !audio.paused;
+      button.setAttribute('aria-pressed', String(playing));
+      button.querySelector('path').setAttribute('d', playing ? 'M7 5h4v14H7zm6 0h4v14h-4z' : 'M8 5v14l11-7z');
+    });
+  }
+  function playRandom(button) {
+    const request = ++playRequest;
+    audio.pause();
+    const choices = previewTracks.map((_,i)=>i).filter(i=>i !== currentTrack);
+    currentTrack = choices[Math.floor(Math.random()*choices.length)];
+    const track = previewTracks[currentTrack];
+    activeButton = button;
+    player.hidden = false;
+    status.textContent = `${track.artist} — ${track.title}`;
+    source.href = track.source;
+    audio.src = track.url;
+    audio.play().catch(() => {
+      if (request !== playRequest) return;
+      status.textContent = `${track.title} — tap Play in the player to listen. If unavailable, try Next track.`;
+      updatePlayButtons();
+    });
+  }
+  playButtons.forEach(button => button.addEventListener('click', () => {
+    if (button === activeButton && !audio.paused) { audio.pause(); return; }
+    playRandom(button);
+  }));
+  document.querySelector('.preview-next').addEventListener('click', () => playRandom(activeButton || playButtons[0]));
+  ['play','pause','ended','emptied'].forEach(event=>audio.addEventListener(event,updatePlayButtons));
+  audio.addEventListener('error',()=>{
+    status.textContent = 'Preview unavailable. Try Next track or open the release on Apple Music.';
+    updatePlayButtons();
+  });
 </script>
 </body>
 </html>
