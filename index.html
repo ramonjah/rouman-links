@@ -232,6 +232,19 @@
     }
     .service-link:focus-visible{outline-color:rgb(var(--brand-rgb))}
     @media(prefers-reduced-motion:reduce){.service-link::after{transition:none}}
+    /* Angular silhouettes echo the cuts in the Rouman wordmark. */
+    .link,.preview-play,.preview-next,.page-tabs button,.release-filters button,.release-info>a,.preview-source{
+      --cut:12px;border-radius:0;
+      clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));
+    }
+    .link{padding-left:24px;padding-right:24px}
+    .preview-play{--cut:10px}
+    .preview-next,.page-tabs button,.release-filters button,.release-info>a,.preview-source{--cut:8px}
+    .booking-panel .link{border-radius:0;--cut:10px}
+    .link:focus-visible,.preview-play:focus-visible,.preview-next:focus-visible,.page-tabs button:focus-visible,.release-filters button:focus-visible,.release-info>a:focus-visible,.preview-source:focus-visible{
+      outline-offset:-4px;outline-width:2px;
+    }
+    @media(max-width:420px){.link{--cut:10px;padding-left:20px;padding-right:20px}.preview-play{--cut:8px}}
   </style>
 </head>
 <body>
