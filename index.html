@@ -284,6 +284,7 @@
     @keyframes mobile-brand-sheen{from{background-position:150% 0}to{background-position:-150% 0}}
     @media(prefers-reduced-motion:reduce){.stage-lasers.music-active::after,.service-link,.service-link::before{animation:none}.service-link::before{opacity:0}}
     @media(max-width:700px) and (prefers-reduced-motion:reduce){.cover-wall{animation:none;transform:rotate(-12deg)}}
+    .preorder-badge[hidden]{display:none}
   </style>
 </head>
 <body>
@@ -562,7 +563,26 @@
   const filterButtons = [...document.querySelectorAll('.release-filters button')];
   const releaseCards = [...document.querySelectorAll('[data-catalog]')];
   const releaseGrid = document.querySelector('.release-grid');
+  // Release dates use UTC consistently, independent of the visitor's timezone.
+  const isUpcoming = (track, now = new Date()) => Boolean(track.date && track.date > now.toISOString().slice(0,10));
+  function refreshReleaseStatus() {
+    releaseCards.forEach(card=>{
+      const track = releaseTracks[Number(card.dataset.catalog)];
+      const upcoming = isUpcoming(track);
+      card.classList.toggle('preorder-card', upcoming);
+      const badge = card.querySelector('.preorder-badge');
+      if (badge) { badge.hidden = !upcoming; badge.textContent = 'PRE-ORDER'; }
+      const date = card.querySelector('.release-date');
+      if (date && track.preorder) date.textContent = `${upcoming ? 'Out ' : 'Released '}${track.date}${track.label ? ' · '+track.label : ''}`;
+      const link = card.querySelector('.release-info>a');
+      if (link && track.preorder) {
+        const text = link.firstChild;
+        if (text && text.nodeType === Node.TEXT_NODE) text.textContent = upcoming ? 'Pre-order on Beatport ' : 'Listen on Beatport ';
+      }
+    });
+  }
   filterButtons.forEach(button=>button.addEventListener('click',()=>{
+    refreshReleaseStatus();
     const mode = button.dataset.filter;
     filterButtons.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
     const order = releaseCards.slice().sort((a,b)=>{
@@ -572,14 +592,19 @@
     let count = 0;
     order.forEach((card,index)=>{
       const item = releaseTracks[Number(card.dataset.catalog)];
-      const releasedOrder = order.filter(c=>!releaseTracks[Number(c.dataset.catalog)].preorder);
-      card.hidden = mode==='latest' ? item.preorder || releasedOrder.indexOf(card)>=3 : mode==='popular' ? !item.rank : mode==='preorders' ? !item.preorder : false;
+      const releasedOrder = order.filter(c=>!isUpcoming(releaseTracks[Number(c.dataset.catalog)]));
+      card.hidden = mode==='latest' ? isUpcoming(item) || releasedOrder.indexOf(card)>=3 : mode==='popular' ? !item.rank : mode==='preorders' ? !isUpcoming(item) : false;
       if(!card.hidden)count++;
       releaseGrid.appendChild(card);
     });
-    document.querySelector('.catalog-note').textContent = mode==='popular' ? `${count} tracks · Beatport artist Top Ten, checked 21 Oct 2026` : mode==='latest' ? '3 latest releases' : mode==='preorders' ? `${count} upcoming tracks · Beatport listings checked 21 Oct 2026` : `${count} tracks including preorders · newest first`;
+    document.querySelector('.catalog-note').textContent = mode==='popular' ? `${count} tracks · Beatport artist Top Ten, checked 21 Oct 2026` : mode==='latest' ? '3 latest releases' : mode==='preorders' ? `${count} upcoming tracks · status by release date (UTC)` : `${count} tracks including preorders · newest first`;
   }));
   filterButtons.find(button=>button.dataset.filter==='popular').click();
+  function refreshActiveReleaseFilter() {
+    filterButtons.find(button=>button.getAttribute('aria-pressed')==='true')?.click();
+  }
+  setInterval(refreshActiveReleaseFilter, 60000);
+  document.addEventListener('visibilitychange',()=>{if (!document.hidden) refreshActiveReleaseFilter();});
 </script>
 </body>
 </html>
