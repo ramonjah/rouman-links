@@ -22,3 +22,15 @@ Artist wordmark: rouman-logo.png copied from /Volumes/PROD/LOGO/WHITE/WHITE.png,
 Generated logo: rouman-logo-sculpted.png. Built-in ImageGen edit of artist original BLACK.png. Prompt: Preserve original ROUMAN silhouette and negative spaces; substantial polished smoked crystal, gunmetal chrome bevels, restrained amber/violet rim lighting, nearly frontal, transparent background, no additional elements. Original logo kept unchanged.
 
 Beatport icon: Simple Icons (CC0), https://github.com/simple-icons/simple-icons/blob/develop/icons/beatport.svg.
+
+## Automatic Spotify popularity
+
+Approved daily GitHub Actions sync (`.github/workflows/spotify-top.yml`, 06:17 UTC).
+`scripts/sync-spotify.py` reads the public Spotify artist embed for artist
+1l3F9u1ySUlZbp3cbl4ZmZ, validates ten unique track identities and saves
+`spotify-top.json` only after validation. No Spotify credentials are needed.
+The frontend uses this snapshot for Popular, shows its successful update date,
+and links to Spotify. Unknown tracks appear without invented artwork.
+Network/schema failures stop publication and preserve the previous snapshot.
+This is the public widget order, not a claim of global streaming counts.
+Manual refresh: run the Refresh Spotify top tracks workflow.

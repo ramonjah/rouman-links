@@ -560,6 +560,8 @@
     });
   });
 
+  let popularProvider = 'Beatport';
+  let popularChecked = '21 Oct 2026';
   const filterButtons = [...document.querySelectorAll('.release-filters button')];
   const releaseCards = [...document.querySelectorAll('[data-catalog]')];
   const releaseGrid = document.querySelector('.release-grid');
@@ -597,12 +599,48 @@
       if(!card.hidden)count++;
       releaseGrid.appendChild(card);
     });
-    document.querySelector('.catalog-note').textContent = mode==='popular' ? `${count} tracks · Beatport artist Top Ten, checked 21 Oct 2026` : mode==='latest' ? '3 latest releases' : mode==='preorders' ? `${count} upcoming tracks · status by release date (UTC)` : `${count} tracks including preorders · newest first`;
+    document.querySelector('.catalog-note').textContent = mode==='popular' ? `${count} tracks · ${popularProvider} Top tracks · updated ${popularChecked}` : mode==='latest' ? '3 latest releases' : mode==='preorders' ? `${count} upcoming tracks · status by release date (UTC)` : `${count} tracks including preorders · newest first`;
   }));
   filterButtons.find(button=>button.dataset.filter==='popular').click();
   function refreshActiveReleaseFilter() {
     filterButtons.find(button=>button.getAttribute('aria-pressed')==='true')?.click();
   }
+  async function loadSpotifyTop() {
+    try {
+      const response = await fetch('spotify-top.json', {cache:'no-cache'});
+      if (!response.ok) throw new Error('Snapshot unavailable');
+      const data = await response.json();
+      if(data.provider!=='Spotify' || data.artistId!=='1l3F9u1ySUlZbp3cbl4ZmZ' || data.tracks.length!==10) throw new Error('Invalid snapshot');
+      if(data.tracks.some(t=>!/^https:\/\/open\.spotify\.com\/track\/[A-Za-z0-9]{22}$/.test(t.url) || (t.catalogIndex!==null && !releaseTracks[t.catalogIndex]))) throw new Error('Invalid tracks');
+      releaseTracks.forEach(t=>t.rank=null);
+      data.tracks.forEach(track=>{
+        let index = track.catalogIndex;
+        if(index===null){
+          index=releaseTracks.length;
+          releaseTracks.push({title:track.title,artist:track.artist,date:'',url:track.preview,source:track.url,provider:'Spotify'});
+          const card=releaseCards[0].cloneNode(true);
+          card.dataset.catalog=index;
+          const art=card.querySelector('.release-art');art.dataset.release=index;art.setAttribute('aria-label','Preview '+track.title);art.setAttribute('aria-pressed','false');
+          art.querySelector('img').remove();art.style.aspectRatio='auto';art.style.height='64px';
+          art.hidden=!track.preview;
+          art.addEventListener('click',()=>playSelected(releaseTracks[index],art));
+          playButtons.push(art);
+          card.querySelector('h2').textContent=track.title;
+          card.querySelector('.release-info>p:not(.release-date)').textContent=track.artist;
+          releaseCards.push(card);releaseGrid.appendChild(card);
+        }
+        const item=releaseTracks[index];item.rank=track.rank;
+        const card=releaseCards.find(c=>Number(c.dataset.catalog)===index);
+        card.querySelector('.release-date').textContent=`#${track.rank} Spotify Top tracks`;
+        const link=card.querySelector('.release-info>a');
+        // Preserve Beatport preorder links until release day.
+        if(!isUpcoming(item)){link.href=track.url;link.firstChild.textContent='Listen in Spotify ';item.preorder=false;}
+      });
+      popularProvider='Spotify';popularChecked=new Date(data.updatedAt).toLocaleDateString('en-GB');
+      refreshActiveReleaseFilter();
+    } catch(error) { console.warn('Keeping last available popularity list:',error.message); }
+  }
+  loadSpotifyTop();
   setInterval(refreshActiveReleaseFilter, 60000);
   document.addEventListener('visibilitychange',()=>{if (!document.hidden) refreshActiveReleaseFilter();});
 </script>

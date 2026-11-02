@@ -1,0 +1,88 @@
+{
+  "provider": "Spotify",
+  "artistId": "1l3F9u1ySUlZbp3cbl4ZmZ",
+  "source": "https://open.spotify.com/embed/artist/1l3F9u1ySUlZbp3cbl4ZmZ",
+  "updatedAt": "2026-11-02T18:44:25.186704+00:00",
+  "tracks": [
+    {
+      "catalogIndex": 32,
+      "artist": "Teddy Killerz, Rouman",
+      "preview": "https://p.scdn.co/mp3-preview/cff7ac8ff778b0ce3069af0b035306376d86616d",
+      "rank": 1,
+      "title": "Bassface",
+      "url": "https://open.spotify.com/track/5TiSAIJWGorkvEoBMwAGRO"
+    },
+    {
+      "catalogIndex": 5,
+      "artist": "AC13, Rouman",
+      "preview": "https://p.scdn.co/mp3-preview/6c3728af047f4298cfee701c8ed4606ad40b4e53",
+      "rank": 2,
+      "title": "Cinderblock",
+      "url": "https://open.spotify.com/track/3CCpHo6EjjTQM5uDu0WLAt"
+    },
+    {
+      "catalogIndex": 16,
+      "artist": "Teddy Killerz, Rouman",
+      "preview": "https://p.scdn.co/mp3-preview/1869b125e76841ad55a49477d2a03c913d58377d",
+      "rank": 3,
+      "title": "Smoke",
+      "url": "https://open.spotify.com/track/1KOf7TufVlyet5ngYIIrpg"
+    },
+    {
+      "catalogIndex": null,
+      "artist": "Rouman",
+      "preview": "https://p.scdn.co/mp3-preview/c5b5bbd222bfbe539485b6c744d6848007106460",
+      "rank": 4,
+      "title": "You Wanna Hear It",
+      "url": "https://open.spotify.com/track/2YdtiHe77VizpfI2XxdnZi"
+    },
+    {
+      "catalogIndex": 4,
+      "artist": "Rouman, Krot",
+      "preview": "https://p.scdn.co/mp3-preview/19c887ed53d756264f404e54c8eade2aea44ebc9",
+      "rank": 5,
+      "title": "F**K Like a G",
+      "url": "https://open.spotify.com/track/4eGxIGQZsuo1uGA5mfBtcm"
+    },
+    {
+      "catalogIndex": 9,
+      "artist": "Rouman, Dominator, Logan D",
+      "preview": "https://p.scdn.co/mp3-preview/d969c79899de74e98da3eb2083e1514f41265689",
+      "rank": 6,
+      "title": "Filthy Dog - Rouman Remix",
+      "url": "https://open.spotify.com/track/3GP5z4ReuCGpqbjP7NhTwz"
+    },
+    {
+      "catalogIndex": 6,
+      "artist": "Rouman, Krot",
+      "preview": "https://p.scdn.co/mp3-preview/2877319e242a2da3d49893e1d0984ffd1f020a68",
+      "rank": 7,
+      "title": "Go Fast (Annual Sampler 2026)",
+      "url": "https://open.spotify.com/track/0KKnfBPHkhfrWpwtmZR5iR"
+    },
+    {
+      "catalogIndex": 2,
+      "artist": "Rouman",
+      "preview": "https://p.scdn.co/mp3-preview/2cc3f26ec486d142c254990b099878379362a4af",
+      "rank": 8,
+      "title": "Roppapoppa",
+      "url": "https://open.spotify.com/track/09UUwtiuLZpLroQEeugFOJ"
+    },
+    {
+      "catalogIndex": 0,
+      "artist": "Krot, Rouman",
+      "preview": "https://p.scdn.co/mp3-preview/57a2b448e9a4c2eafe440f6b9fe57e6fa7de0f05",
+      "rank": 9,
+      "title": "Strictly for the South",
+      "url": "https://open.spotify.com/track/1J7tcUwVNk6TYQq2Lg5Xon"
+    },
+    {
+      "catalogIndex": 8,
+      "artist": "Rouman",
+      "preview": "https://p.scdn.co/mp3-preview/d3a6de56f8e076b9053e21df6cc66300e251ea1f",
+      "rank": 10,
+      "title": "Van Damme",
+      "url": "https://open.spotify.com/track/6UyxYvybyyhqeICmDkEjPn"
+    }
+  ]
+}
