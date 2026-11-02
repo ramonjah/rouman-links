@@ -12,6 +12,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   refresh:
+    environment:
+      name: github-pages
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
