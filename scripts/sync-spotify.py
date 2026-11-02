@@ -2,6 +2,7 @@
 import json, re, unicodedata, subprocess
 from pathlib import Path
 from datetime import datetime, timezone
+from urllib.parse import urlencode, urlparse
 
 ARTIST = '1l3F9u1ySUlZbp3cbl4ZmZ'
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,7 +24,15 @@ def main():
         if 'rouman' not in track['subtitle'].casefold() or not re.fullmatch(r'spotify:track:[A-Za-z0-9]{22}',track['uri']): raise ValueError('Invalid track identity')
         matches = [i for i,item in enumerate(catalog) if normalize(item['title']) == normalize(track['title'])]
         if len(matches) > 1: raise ValueError('Ambiguous catalog match')
-        result.append({'catalogIndex':matches[0] if matches else None, 'artist':track['subtitle'], 'preview':(track.get('audioPreview') or {}).get('url'), 'rank':rank, 'title':track['title'], 'url':'https://open.spotify.com/track/'+track['uri'].split(':')[-1]})
+        cover = None
+        if not matches:
+            track_url = 'https://open.spotify.com/track/'+track['uri'].split(':')[-1]
+            metadata = json.loads(subprocess.check_output(['curl','--fail','--silent','--show-error','--location','--max-time','40','https://open.spotify.com/oembed?'+urlencode({'url':track_url})], text=True))
+            cover = metadata.get('thumbnail_url')
+            host = urlparse(cover or '').hostname or ''
+            if metadata.get('provider_name') != 'Spotify' or normalize(metadata.get('title','')) != normalize(track['title']) or not cover.startswith('https://') or not (host.endswith('.spotifycdn.com') or host == 'i.scdn.co'):
+                raise ValueError('Unverified Spotify artwork; preserving previous snapshot')
+        result.append({'catalogIndex':matches[0] if matches else None, 'artist':track['subtitle'], 'cover':cover, 'preview':(track.get('audioPreview') or {}).get('url'), 'rank':rank, 'title':track['title'], 'url':'https://open.spotify.com/track/'+track['uri'].split(':')[-1]})
     data = {'provider':'Spotify','artistId':ARTIST,'source':url,'updatedAt':datetime.now(timezone.utc).isoformat(), 'tracks':result}
     target=ROOT/'spotify-top.json'
     temp=target.with_suffix('.tmp');temp.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n');temp.replace(target)

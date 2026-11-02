@@ -621,8 +621,16 @@
           const card=releaseCards[0].cloneNode(true);
           card.dataset.catalog=index;
           const art=card.querySelector('.release-art');art.dataset.release=index;art.setAttribute('aria-label','Preview '+track.title);art.setAttribute('aria-pressed','false');
-          art.querySelector('img').remove();art.style.aspectRatio='auto';art.style.height='64px';
-          art.hidden=!track.preview;
+          const image=art.querySelector('img');
+          if(track.cover && /^https:\/\/(?:[a-z0-9.-]+\.spotifycdn\.com|i\.scdn\.co)\//i.test(track.cover)) {
+            art.classList.remove('image-ready','image-failed');art.classList.add('image-pending');
+            image.alt=track.title+' cover';image.width=300;image.height=300;
+            image.addEventListener('load',()=>{art.classList.remove('image-pending');art.classList.add('image-ready');});
+            image.addEventListener('error',()=>{art.classList.remove('image-pending');art.classList.add('image-failed');});
+            image.src=track.cover;
+          } else {image.remove();art.style.aspectRatio='auto';art.style.height='64px';}
+          art.disabled=!track.preview;
+          if(!track.preview) art.querySelector('.release-play').hidden=true;
           art.addEventListener('click',()=>playSelected(releaseTracks[index],art));
           playButtons.push(art);
           card.querySelector('h2').textContent=track.title;
