@@ -2,7 +2,7 @@
   "provider": "Spotify",
   "artistId": "1l3F9u1ySUlZbp3cbl4ZmZ",
   "source": "https://open.spotify.com/embed/artist/1l3F9u1ySUlZbp3cbl4ZmZ",
-  "updatedAt": "2026-11-02T18:55:44.821298+00:00",
+  "updatedAt": "2026-11-03T14:24:30.723036+00:00",
   "tracks": [
     {
       "catalogIndex": 32,
@@ -59,22 +59,22 @@
       "url": "https://open.spotify.com/track/3GP5z4ReuCGpqbjP7NhTwz"
     },
     {
-      "catalogIndex": 6,
-      "artist": "Rouman, Krot",
-      "cover": null,
-      "preview": "https://p.scdn.co/mp3-preview/2877319e242a2da3d49893e1d0984ffd1f020a68",
-      "rank": 7,
-      "title": "Go Fast (Annual Sampler 2026)",
-      "url": "https://open.spotify.com/track/0KKnfBPHkhfrWpwtmZR5iR"
-    },
-    {
       "catalogIndex": 2,
       "artist": "Rouman",
       "cover": null,
       "preview": "https://p.scdn.co/mp3-preview/2cc3f26ec486d142c254990b099878379362a4af",
-      "rank": 8,
+      "rank": 7,
       "title": "Roppapoppa",
       "url": "https://open.spotify.com/track/09UUwtiuLZpLroQEeugFOJ"
+    },
+    {
+      "catalogIndex": 6,
+      "artist": "Rouman, Krot",
+      "cover": null,
+      "preview": "https://p.scdn.co/mp3-preview/2877319e242a2da3d49893e1d0984ffd1f020a68",
+      "rank": 8,
+      "title": "Go Fast (Annual Sampler 2026)",
+      "url": "https://open.spotify.com/track/0KKnfBPHkhfrWpwtmZR5iR"
     },
     {
       "catalogIndex": 0,
