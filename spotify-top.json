@@ -2,7 +2,7 @@
   "provider": "Spotify",
   "artistId": "1l3F9u1ySUlZbp3cbl4ZmZ",
   "source": "https://open.spotify.com/embed/artist/1l3F9u1ySUlZbp3cbl4ZmZ",
-  "updatedAt": "2026-11-03T14:24:30.723036+00:00",
+  "updatedAt": "2026-11-04T14:38:59.944498+00:00",
   "tracks": [
     {
       "catalogIndex": 32,
@@ -77,22 +77,22 @@
       "url": "https://open.spotify.com/track/0KKnfBPHkhfrWpwtmZR5iR"
     },
     {
-      "catalogIndex": 0,
-      "artist": "Krot, Rouman",
-      "cover": null,
-      "preview": "https://p.scdn.co/mp3-preview/57a2b448e9a4c2eafe440f6b9fe57e6fa7de0f05",
-      "rank": 9,
-      "title": "Strictly for the South",
-      "url": "https://open.spotify.com/track/1J7tcUwVNk6TYQq2Lg5Xon"
-    },
-    {
       "catalogIndex": 8,
       "artist": "Rouman",
       "cover": null,
       "preview": "https://p.scdn.co/mp3-preview/d3a6de56f8e076b9053e21df6cc66300e251ea1f",
-      "rank": 10,
+      "rank": 9,
       "title": "Van Damme",
       "url": "https://open.spotify.com/track/6UyxYvybyyhqeICmDkEjPn"
+    },
+    {
+      "catalogIndex": 0,
+      "artist": "Krot, Rouman",
+      "cover": null,
+      "preview": "https://p.scdn.co/mp3-preview/57a2b448e9a4c2eafe440f6b9fe57e6fa7de0f05",
+      "rank": 10,
+      "title": "Strictly for the South",
+      "url": "https://open.spotify.com/track/1J7tcUwVNk6TYQq2Lg5Xon"
     }
   ]
 }
