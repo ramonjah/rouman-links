@@ -2,7 +2,7 @@
   "provider": "Spotify",
   "artistId": "1l3F9u1ySUlZbp3cbl4ZmZ",
   "source": "https://open.spotify.com/embed/artist/1l3F9u1ySUlZbp3cbl4ZmZ",
-  "updatedAt": "2026-11-04T14:38:59.944498+00:00",
+  "updatedAt": "2026-11-05T14:44:02.061004+00:00",
   "tracks": [
     {
       "catalogIndex": 32,
@@ -34,7 +34,7 @@
     {
       "catalogIndex": null,
       "artist": "Rouman",
-      "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0295768ef9f759048c69d2a252",
+      "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0295768ef9f759048c69d2a252",
       "preview": "https://p.scdn.co/mp3-preview/c5b5bbd222bfbe539485b6c744d6848007106460",
       "rank": 4,
       "title": "You Wanna Hear It",
@@ -50,11 +50,20 @@
       "url": "https://open.spotify.com/track/4eGxIGQZsuo1uGA5mfBtcm"
     },
     {
+      "catalogIndex": 6,
+      "artist": "Rouman, Krot",
+      "cover": null,
+      "preview": "https://p.scdn.co/mp3-preview/2877319e242a2da3d49893e1d0984ffd1f020a68",
+      "rank": 6,
+      "title": "Go Fast (Annual Sampler 2026)",
+      "url": "https://open.spotify.com/track/0KKnfBPHkhfrWpwtmZR5iR"
+    },
+    {
       "catalogIndex": 9,
       "artist": "Rouman, Dominator, Logan D",
       "cover": null,
       "preview": "https://p.scdn.co/mp3-preview/d969c79899de74e98da3eb2083e1514f41265689",
-      "rank": 6,
+      "rank": 7,
       "title": "Filthy Dog - Rouman Remix",
       "url": "https://open.spotify.com/track/3GP5z4ReuCGpqbjP7NhTwz"
     },
@@ -63,18 +72,9 @@
       "artist": "Rouman",
       "cover": null,
       "preview": "https://p.scdn.co/mp3-preview/2cc3f26ec486d142c254990b099878379362a4af",
-      "rank": 7,
+      "rank": 8,
       "title": "Roppapoppa",
       "url": "https://open.spotify.com/track/09UUwtiuLZpLroQEeugFOJ"
-    },
-    {
-      "catalogIndex": 6,
-      "artist": "Rouman, Krot",
-      "cover": null,
-      "preview": "https://p.scdn.co/mp3-preview/2877319e242a2da3d49893e1d0984ffd1f020a68",
-      "rank": 8,
-      "title": "Go Fast (Annual Sampler 2026)",
-      "url": "https://open.spotify.com/track/0KKnfBPHkhfrWpwtmZR5iR"
     },
     {
       "catalogIndex": 8,
