@@ -2,7 +2,7 @@
   "provider": "Spotify",
   "artistId": "1l3F9u1ySUlZbp3cbl4ZmZ",
   "source": "https://open.spotify.com/embed/artist/1l3F9u1ySUlZbp3cbl4ZmZ",
-  "updatedAt": "2026-11-07T13:10:28.875369+00:00",
+  "updatedAt": "2026-11-08T13:31:21.326042+00:00",
   "tracks": [
     {
       "catalogIndex": 32,
@@ -59,22 +59,22 @@
       "url": "https://open.spotify.com/track/0KKnfBPHkhfrWpwtmZR5iR"
     },
     {
-      "catalogIndex": 2,
-      "artist": "Rouman",
-      "cover": null,
-      "preview": "https://p.scdn.co/mp3-preview/2cc3f26ec486d142c254990b099878379362a4af",
-      "rank": 7,
-      "title": "Roppapoppa",
-      "url": "https://open.spotify.com/track/09UUwtiuLZpLroQEeugFOJ"
-    },
-    {
       "catalogIndex": 9,
       "artist": "Rouman, Dominator, Logan D",
       "cover": null,
       "preview": "https://p.scdn.co/mp3-preview/d969c79899de74e98da3eb2083e1514f41265689",
-      "rank": 8,
+      "rank": 7,
       "title": "Filthy Dog - Rouman Remix",
       "url": "https://open.spotify.com/track/3GP5z4ReuCGpqbjP7NhTwz"
+    },
+    {
+      "catalogIndex": 2,
+      "artist": "Rouman",
+      "cover": null,
+      "preview": "https://p.scdn.co/mp3-preview/2cc3f26ec486d142c254990b099878379362a4af",
+      "rank": 8,
+      "title": "Roppapoppa",
+      "url": "https://open.spotify.com/track/09UUwtiuLZpLroQEeugFOJ"
     },
     {
       "catalogIndex": 8,
