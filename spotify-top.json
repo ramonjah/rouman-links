@@ -2,7 +2,7 @@
   "provider": "Spotify",
   "artistId": "1l3F9u1ySUlZbp3cbl4ZmZ",
   "source": "https://open.spotify.com/embed/artist/1l3F9u1ySUlZbp3cbl4ZmZ",
-  "updatedAt": "2026-11-13T14:40:05.958271+00:00",
+  "updatedAt": "2026-11-14T13:37:41.325401+00:00",
   "tracks": [
     {
       "catalogIndex": 32,
@@ -68,22 +68,22 @@
       "url": "https://open.spotify.com/track/3GP5z4ReuCGpqbjP7NhTwz"
     },
     {
-      "catalogIndex": 2,
-      "artist": "Rouman",
-      "cover": null,
-      "preview": "https://p.scdn.co/mp3-preview/2cc3f26ec486d142c254990b099878379362a4af",
-      "rank": 8,
-      "title": "Roppapoppa",
-      "url": "https://open.spotify.com/track/09UUwtiuLZpLroQEeugFOJ"
-    },
-    {
       "catalogIndex": 8,
       "artist": "Rouman",
       "cover": null,
       "preview": "https://p.scdn.co/mp3-preview/d3a6de56f8e076b9053e21df6cc66300e251ea1f",
-      "rank": 9,
+      "rank": 8,
       "title": "Van Damme",
       "url": "https://open.spotify.com/track/6UyxYvybyyhqeICmDkEjPn"
+    },
+    {
+      "catalogIndex": 2,
+      "artist": "Rouman",
+      "cover": null,
+      "preview": "https://p.scdn.co/mp3-preview/2cc3f26ec486d142c254990b099878379362a4af",
+      "rank": 9,
+      "title": "Roppapoppa",
+      "url": "https://open.spotify.com/track/09UUwtiuLZpLroQEeugFOJ"
     },
     {
       "catalogIndex": 0,
