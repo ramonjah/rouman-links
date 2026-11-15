@@ -2,7 +2,7 @@
   "provider": "Spotify",
   "artistId": "1l3F9u1ySUlZbp3cbl4ZmZ",
   "source": "https://open.spotify.com/embed/artist/1l3F9u1ySUlZbp3cbl4ZmZ",
-  "updatedAt": "2026-11-14T13:37:41.325401+00:00",
+  "updatedAt": "2026-11-15T14:00:50.217308+00:00",
   "tracks": [
     {
       "catalogIndex": 32,
@@ -68,11 +68,20 @@
       "url": "https://open.spotify.com/track/3GP5z4ReuCGpqbjP7NhTwz"
     },
     {
+      "catalogIndex": 36,
+      "artist": "Rouman",
+      "cover": null,
+      "preview": "https://p.scdn.co/mp3-preview/a18920bb324be9355977ef18e87fc35c45d9fe5b",
+      "rank": 8,
+      "title": "He So Good",
+      "url": "https://open.spotify.com/track/3d0m4OiVZVWLVqQjzwFib3"
+    },
+    {
       "catalogIndex": 8,
       "artist": "Rouman",
       "cover": null,
       "preview": "https://p.scdn.co/mp3-preview/d3a6de56f8e076b9053e21df6cc66300e251ea1f",
-      "rank": 8,
+      "rank": 9,
       "title": "Van Damme",
       "url": "https://open.spotify.com/track/6UyxYvybyyhqeICmDkEjPn"
     },
@@ -81,18 +90,9 @@
       "artist": "Rouman",
       "cover": null,
       "preview": "https://p.scdn.co/mp3-preview/2cc3f26ec486d142c254990b099878379362a4af",
-      "rank": 9,
+      "rank": 10,
       "title": "Roppapoppa",
       "url": "https://open.spotify.com/track/09UUwtiuLZpLroQEeugFOJ"
-    },
-    {
-      "catalogIndex": 0,
-      "artist": "Krot, Rouman",
-      "cover": null,
-      "preview": "https://p.scdn.co/mp3-preview/57a2b448e9a4c2eafe440f6b9fe57e6fa7de0f05",
-      "rank": 10,
-      "title": "Strictly for the South",
-      "url": "https://open.spotify.com/track/1J7tcUwVNk6TYQq2Lg5Xon"
     }
   ]
 }
