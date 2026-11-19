@@ -2,7 +2,7 @@
   "provider": "Spotify",
   "artistId": "1l3F9u1ySUlZbp3cbl4ZmZ",
   "source": "https://open.spotify.com/embed/artist/1l3F9u1ySUlZbp3cbl4ZmZ",
-  "updatedAt": "2026-11-18T15:44:58.559497+00:00",
+  "updatedAt": "2026-11-19T15:50:51.532943+00:00",
   "tracks": [
     {
       "catalogIndex": 32,
@@ -50,49 +50,49 @@
       "url": "https://open.spotify.com/track/2YdtiHe77VizpfI2XxdnZi"
     },
     {
+      "catalogIndex": 33,
+      "artist": "Rouman",
+      "cover": null,
+      "preview": "https://p.scdn.co/mp3-preview/763bf04e05030e1aa785e19a89af5a7719f7ae41",
+      "rank": 6,
+      "title": "The Gun Go Wow",
+      "url": "https://open.spotify.com/track/5KD5xz54p4LjNXCszY4Bm8"
+    },
+    {
       "catalogIndex": 4,
       "artist": "Rouman, Krot",
       "cover": null,
       "preview": "https://p.scdn.co/mp3-preview/19c887ed53d756264f404e54c8eade2aea44ebc9",
-      "rank": 6,
+      "rank": 7,
       "title": "F**K Like a G",
       "url": "https://open.spotify.com/track/4eGxIGQZsuo1uGA5mfBtcm"
+    },
+    {
+      "catalogIndex": 34,
+      "artist": "Rouman",
+      "cover": null,
+      "preview": "https://p.scdn.co/mp3-preview/fc0a468dd390f87b8efba21f2864f9a8bed5eb2a",
+      "rank": 8,
+      "title": "Click Clack",
+      "url": "https://open.spotify.com/track/4B4KhxZ5RdQkl60rDvjLA6"
     },
     {
       "catalogIndex": 6,
       "artist": "Rouman, Krot",
       "cover": null,
       "preview": "https://p.scdn.co/mp3-preview/2877319e242a2da3d49893e1d0984ffd1f020a68",
-      "rank": 7,
+      "rank": 9,
       "title": "Go Fast (Annual Sampler 2026)",
       "url": "https://open.spotify.com/track/0KKnfBPHkhfrWpwtmZR5iR"
-    },
-    {
-      "catalogIndex": 8,
-      "artist": "Rouman",
-      "cover": null,
-      "preview": "https://p.scdn.co/mp3-preview/d3a6de56f8e076b9053e21df6cc66300e251ea1f",
-      "rank": 8,
-      "title": "Van Damme",
-      "url": "https://open.spotify.com/track/6UyxYvybyyhqeICmDkEjPn"
     },
     {
       "catalogIndex": 9,
       "artist": "Rouman, Dominator, Logan D",
       "cover": null,
       "preview": "https://p.scdn.co/mp3-preview/d969c79899de74e98da3eb2083e1514f41265689",
-      "rank": 9,
+      "rank": 10,
       "title": "Filthy Dog - Rouman Remix",
       "url": "https://open.spotify.com/track/3GP5z4ReuCGpqbjP7NhTwz"
-    },
-    {
-      "catalogIndex": 2,
-      "artist": "Rouman",
-      "cover": null,
-      "preview": "https://p.scdn.co/mp3-preview/2cc3f26ec486d142c254990b099878379362a4af",
-      "rank": 10,
-      "title": "Roppapoppa",
-      "url": "https://open.spotify.com/track/09UUwtiuLZpLroQEeugFOJ"
     }
   ]
 }
