@@ -2,7 +2,7 @@
   "provider": "Spotify",
   "artistId": "1l3F9u1ySUlZbp3cbl4ZmZ",
   "source": "https://open.spotify.com/embed/artist/1l3F9u1ySUlZbp3cbl4ZmZ",
-  "updatedAt": "2026-11-19T15:50:51.532943+00:00",
+  "updatedAt": "2026-11-20T15:31:41.668761+00:00",
   "tracks": [
     {
       "catalogIndex": 32,
@@ -41,40 +41,40 @@
       "url": "https://open.spotify.com/track/3d0m4OiVZVWLVqQjzwFib3"
     },
     {
-      "catalogIndex": null,
-      "artist": "Rouman",
-      "cover": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e0295768ef9f759048c69d2a252",
-      "preview": "https://p.scdn.co/mp3-preview/c5b5bbd222bfbe539485b6c744d6848007106460",
-      "rank": 5,
-      "title": "You Wanna Hear It",
-      "url": "https://open.spotify.com/track/2YdtiHe77VizpfI2XxdnZi"
-    },
-    {
       "catalogIndex": 33,
       "artist": "Rouman",
       "cover": null,
       "preview": "https://p.scdn.co/mp3-preview/763bf04e05030e1aa785e19a89af5a7719f7ae41",
-      "rank": 6,
+      "rank": 5,
       "title": "The Gun Go Wow",
       "url": "https://open.spotify.com/track/5KD5xz54p4LjNXCszY4Bm8"
     },
     {
-      "catalogIndex": 4,
-      "artist": "Rouman, Krot",
-      "cover": null,
-      "preview": "https://p.scdn.co/mp3-preview/19c887ed53d756264f404e54c8eade2aea44ebc9",
-      "rank": 7,
-      "title": "F**K Like a G",
-      "url": "https://open.spotify.com/track/4eGxIGQZsuo1uGA5mfBtcm"
+      "catalogIndex": null,
+      "artist": "Rouman",
+      "cover": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0295768ef9f759048c69d2a252",
+      "preview": "https://p.scdn.co/mp3-preview/c5b5bbd222bfbe539485b6c744d6848007106460",
+      "rank": 6,
+      "title": "You Wanna Hear It",
+      "url": "https://open.spotify.com/track/2YdtiHe77VizpfI2XxdnZi"
     },
     {
       "catalogIndex": 34,
       "artist": "Rouman",
       "cover": null,
       "preview": "https://p.scdn.co/mp3-preview/fc0a468dd390f87b8efba21f2864f9a8bed5eb2a",
-      "rank": 8,
+      "rank": 7,
       "title": "Click Clack",
       "url": "https://open.spotify.com/track/4B4KhxZ5RdQkl60rDvjLA6"
+    },
+    {
+      "catalogIndex": 4,
+      "artist": "Rouman, Krot",
+      "cover": null,
+      "preview": "https://p.scdn.co/mp3-preview/19c887ed53d756264f404e54c8eade2aea44ebc9",
+      "rank": 8,
+      "title": "F**K Like a G",
+      "url": "https://open.spotify.com/track/4eGxIGQZsuo1uGA5mfBtcm"
     },
     {
       "catalogIndex": 6,
