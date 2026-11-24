@@ -2,7 +2,7 @@
   "provider": "Spotify",
   "artistId": "1l3F9u1ySUlZbp3cbl4ZmZ",
   "source": "https://open.spotify.com/embed/artist/1l3F9u1ySUlZbp3cbl4ZmZ",
-  "updatedAt": "2026-11-23T18:19:01.300218+00:00",
+  "updatedAt": "2026-11-24T17:52:16.564346+00:00",
   "tracks": [
     {
       "catalogIndex": 32,
@@ -14,22 +14,22 @@
       "url": "https://open.spotify.com/track/5TiSAIJWGorkvEoBMwAGRO"
     },
     {
-      "catalogIndex": 5,
-      "artist": "AC13, Rouman",
-      "cover": null,
-      "preview": "https://p.scdn.co/mp3-preview/6c3728af047f4298cfee701c8ed4606ad40b4e53",
-      "rank": 2,
-      "title": "Cinderblock",
-      "url": "https://open.spotify.com/track/3CCpHo6EjjTQM5uDu0WLAt"
-    },
-    {
       "catalogIndex": 36,
       "artist": "Rouman",
       "cover": null,
       "preview": "https://p.scdn.co/mp3-preview/a18920bb324be9355977ef18e87fc35c45d9fe5b",
-      "rank": 3,
+      "rank": 2,
       "title": "He So Good",
       "url": "https://open.spotify.com/track/3d0m4OiVZVWLVqQjzwFib3"
+    },
+    {
+      "catalogIndex": 5,
+      "artist": "AC13, Rouman",
+      "cover": null,
+      "preview": "https://p.scdn.co/mp3-preview/6c3728af047f4298cfee701c8ed4606ad40b4e53",
+      "rank": 3,
+      "title": "Cinderblock",
+      "url": "https://open.spotify.com/track/3CCpHo6EjjTQM5uDu0WLAt"
     },
     {
       "catalogIndex": 16,
